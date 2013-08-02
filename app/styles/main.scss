@@ -1,0 +1,50 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+
+}
+
+body {
+  background: radial-gradient(#fff, #bbb);
+  font: 400 100% 'Raleway', sans-serif;
+}
+#main{
+    overflow:hidden;
+}
+
+#panel2,
+#panel1{
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    width:100%;
+    background: white;
+}
+
+
+#lastname, #firstname{
+    text-transform: uppercase;
+    margin-top:-20px;
+    opacity:0;
+    font-family: 'Audiowide', cursive;
+    font-size:2em;
+    color: #bbb;
+}
+
+.line{
+    position: absolute;
+    height: 1px;
+    width: 0;
+    background: #bbb;
+    top: 50%;
+    margin-top:-1px;
+    &.lline{
+        left: -50%;
+        width: 50%; 
+    }
+    &.rline{
+        right: -50%;
+        width: 50%;
+    }
+}
