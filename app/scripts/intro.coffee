@@ -68,16 +68,6 @@ $(document).ready ->
       $line.css
         display: 'none'
 
-
-
-    ###
-    ia.to $intro, 0.2,
-      rotationY:45
-      x:10
-      y:0
-      z:-200
-    ###
-    
     ia.to $panel1, 0.5,
       height:0
       paddingTop:0
@@ -91,5 +81,5 @@ $(document).ready ->
     
 
 
-  intro()
+  #intro()
       

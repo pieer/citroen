@@ -12,8 +12,10 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/old.css">
         <!-- endbuild -->
-        <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+
 
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -31,7 +33,257 @@
                 <div class="line lline"></div>
                 <div class="line rline"></div>
             </div>
+
+
+
+            <div id="header">
+            <h1> Pierre Schweiger</h1>
+            <ul id="social">
+                <li><a class="arob" href="mailto:schweiger.pierre@gmail.com" alt="Mail to schweiger.pierre@gmail.com">@</a></li>
+                <li>
+                    <span id="subpsd">
+                        PDF
+                        <a class="sublink" href="portfolio_pierre_schweiger.pdf" alt="Portfolio version pdf">Portfolio</a>
+                        <a class="sublink" href="Pierre_Schweiger_Interaction_designer.pdf" alt="CV version pdf">CV</a>
+                    </span>
+                </li>
+            </ul>
+            <h1 class="bigwhite"> Interaction designer</h1>
         </div>
+        <div id="leftnav"> 
+            <ul>
+                <li><a href="#profile" class="active">Profile</a></li>
+                <li><a href="#interactionDesign">Interaction design</a></li>
+                <li><a href="#interfaceDesign">Interface design</a></li>
+                <li><a href="#development">Development</a></li>
+                <li><a href="#printDesign">Print design</a></li>
+                <li><a href="#cv">CV</a></li>
+            </ul>
+        </div>
+        <div id="center_col">
+            <div id="profile" class="wrapper">
+                <div id="profile_desc" class="desc">
+                    <h2>Web and UI creative design</h2>
+                
+                    <p>After having developed my teaching skills by sharing my programming knowledge through lecturing in different universities, I took the step to move into front end developing. Design was more of a passion for me than the architecture of a database.</p>
+                    <img src="img/ratecity1.jpg" alt="Home page Ratecity.com.au" />
+                    <p>At this time UX design was a nascent industry, and I continued independent research across the web, studying the different forms of web interaction.</p>
+                    <p>I believe my programming background, most notably javascript has driven and enabled my imagination for the best possible permutations in user experience.</p>
+                    <p>With this experience, I can also follow the project through from concept, prototype and full realization, with a clear understanding from beginning to end.</p>
+                    <p>My philosophy is always to start from the user's point of view, and building on a deep understanding of their experience.</p> 
+                    <img src="img/ratecity3.jpg" alt="Calulator Ratecity.com.au" />
+                </div>
+                
+                
+                
+            </div>
+
+            <div id="interactionDesign" class="wrapper aw">
+                <h2>Interaction design</h2>
+                <ul class="linklist">
+                    <li><a href="#studyCase" class="active">Study case</a></li>
+                    <li><a href="#prototype">Prototype</a></li>
+                </ul>
+                <div id="studyCase"  class="subwrapper">
+                    <div id="interaction_design_desc" class="desc">
+                        <span class="box-title">The Decanter</span>
+                        <p>
+                            In this comparison site, the attention was centered around helping the user  choose a product between a large range of products. In order to help to refine  the choice, I created a watch list  allowing the user to select the product he might be interested in.
+                            This way he can go through the huge list of products and make a comparison between selected products more easily.
+                            <br>
+                            <small><a href="http://www.ratecity.com.au">Ratecity.com.au</a></small>
+                        </p>
+                        
+                    </div>
+                    <img src="img/interaction2.png" alt="Study case: the decanter" />
+                    <ul class="smallImglist">
+                        <li>
+                            <span class="box-title">Fast SEARCH</span>
+                            <p>In order to help the user to find the best product quickly, all the parameters are easily accessible by refining the search via ajax without reloading the full page
+                            </p>
+                            <p>Slider are here to make the search even quicker.</p>
+                        </li>
+                        <li>
+                            <span class="box-title">Inform the user</span>
+                            <p>According to the search, some products selected might be not available. A color code is use to alert him.</p>
+                            <p>This part of the table named the "decanter" is always visible at the top of the page even if the user scroll down.</p>
+                        </li>
+                        <li>
+                            <span class="box-title">Be social</span>
+                            <p>One of the best way to make a decision is to share the information to discuss it. Mail, print, bookmark. And soon +1...</p>
+                            <p>Hints appear on hover state in order to define symbols that might not be recognized</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="prototype" class="subwrapper">
+                    <p class="espace">Interface experiences are explored and defined through the use of whiteboard sketches, wireframes and prototypes.</p>
+                    <img src="img/interaction3.png" alt="Wireframe" />
+                </div>
+            </div>
+
+            <div id="interfaceDesign" class="wrapper aw">
+                <h2>Interface design</h2>
+                <ul class="linklist">
+                    <li><a href="#officeWork" class="active">Office Work</a></li>
+                    <li><a href="#freelance">Freelance Work</a></li>
+                </ul>
+                <div id="officeWork" class="subwrapper">
+                    <div id="interface_design_desc" class="desc">
+                    <p>Websites for Ratecity, Laurentienne Bank, Boeing and Royal Bank Canada. </p>
+                    <img src="img/fe1bis.jpg" alt="Boeing, Royal Bank Canada and Laurentienne Bank" /></div> 
+                </div>
+                <div id="freelance" class="subwrapper">
+                    <p>Design for the web site Solar panel (in construction)</p>
+                    <img src="img/fe2.png" alt="Solar panel" />
+                    <img src="img/fe3.png" alt="Freelance works" class="espace"/>
+                    <ul class="smallImglist">
+                        <li class="espace">
+                            <span class="box-title">Facebook application</span>
+                            <small>Competition integrated in Facebook</small>
+                        </li>
+                        <li class="espace">
+                            <span class="box-title">Sales forces integration</span>
+                            <small>Targeting affiliates</small>
+                        </li>
+                        <li class="espace">
+                            <span class="box-title">Wordpress Template</span>
+                            <small>Product catalogue template.</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="printDesign" class="wrapper">
+                <h2>Print design</h2>
+                <div id="print_design_desc" class="desc">
+                    <p>Album covers for Inna Riddim
+                    </p> 
+                </div>
+                <img src="img/print.png" alt="Inna Riddim Covers" />
+            </div>
+
+            <div id="development" class="wrapper">
+                <div class="section">
+                    <div class="leftsection">
+                        <h2>Profesional skills</h2>
+                    </div>
+                    <div class="rightsection">
+                        <ul>
+                            <li><span>Languages</span> : <em>Javascript</em>, Ruby, C#, Java, PHP, Action Script, XHTML, <em>CSS</em>, FBML, XAML, MXML</li>
+                            <li><span>Frameworks & SDK</span>: <em>JQuery</em>, Rails, webGL, Raphael, Prototype, JSON, Processing</li>
+                            <li><span>Operating system</span>: Mac OS X, Windows, Linux</li>
+                            <li><span>Softwares</span>: <em>Adobe suite</em> (complete), Eclipse, Visual Studio, Flex Builder, Microsoft Expression.</li>
+                            <li><span>Collaborative management tool</span>: <em>Git</em>,<em> Pivotal tracker</em>, Mantis, Jira</li>
+                            <li><span>Methodologies</span>: <em>Agile</em>,<em> User Centered Design</em>,<em> User scenario</em>,<em>Usability testing</em></li>
+                        </ul>
+                    </div>
+                </div>
+                <code>
+                    
+                </code>
+            </div>
+            
+            <div id="cv" class="wrapper aw">
+                <h2>Curriculum Vitae</h2>
+                <ul class="linklist">
+                    <li><a href="#employment" class="active">Employment</a></li>
+                    <li><a href="#freelance2">Freelance Work</a></li>
+                    <li><a href="#education">Education</a></li>
+                </ul>
+                <div id="employment" class="subwrapper">
+                    <div class="section">
+                        <div class="leftsection">
+                            <h3>Employment</h3>
+                        </div>
+                        <div class="rightsection">
+                            <ul>
+                                <li><h4><em>Interaction designer and Front-end developer</em>, Ninemsn; Sydney  <time>2010-2011</time></h4></li>
+                                <li>Web developer and UX designer on Ratecity's suite of websites. My responsibilities include:</li>
+                                <li>- Data Visualisation and page UI Interactions</li>
+                                <li>- Owner of Ratecity front-end technology</li>
+                                <li>- Guidance for site visual and behavioural direction</li>
+                                <li>- Guidance of site technological direction</li>
+                                <li>- On time production of cross browser compatible web pages</li>
+                           </ul>
+        
+                            <ul>
+                                <li><h4><em>Interaction designer and Front-end developer</em>, Rideau Recognition; Montreal  <time>2008-2009</time></h4></li>
+                                <li>Worked on Boeing, RBC Bank, Laurentienne Bank, H&R block, Desjardins bank websites as:</li>
+                                <li>- Designer (User centered design process, usability and accessibility testing, PSD, optimisation)</li>
+                                <li>- Integrator (XHTML, CSS, JQuery, all trident, gecko and webkit support including ie6...)</li>
+                                <li>- ASP.NET and Flash developer (Extreme programming, Agile, test driven development)</li>
+                                <li>Key team member supporting and developing collegues.</li>
+                                <li>Ensured 100% client renewal.</li>
+                            </ul>
+                            <ul>
+                                <li><h4><em>Training instructor</em>, SUPINFO; Bordeaux, Paris (France), Montreal (Canada), Beijing, Tianjin et Qingdao(China) <time>2006-2008</time></h4></li>
+                                <li>Taught programming languages for 1150 students of Master of Technology</li>
+                                <li>- Internet Technologies [X]HTML, CSS, JavaScript, XML, PHP</li>
+                                <li>- C#, Windows Applications, ASP.NET</li>
+                            </ul>
+                            <ul>
+                                <li><h4><em>Developer</em>, TDM (THALES); Bordeaux <time>2003</time> (Internship - 3 months)</h4></li>
+                                <li>- Developed best practice application for order management and delivery notes</li>
+                                <li>- Built intranet for the service quality of the company.</li>
+                            </ul>
+                            <ul>
+                                <li><h4><em>Developer</em>, NextiraOne (ALCATEL); Bordeaux <time>2002</time> (Internship -2 months)</h4></li>
+                                <li>- Pivotal team member in creation of a surveillance of highways (C++)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="freelance2" class="subwrapper">
+                    <div class="section">
+                    <div class="leftsection">
+                        <h3>Freelance work</h3>
+                    </div>
+                    <div class="rightsection">
+                        <ul>
+                            <li><h4><em>Designer/ Developer</em>, Le coq Sportif; Sydney <time>2011</time></h4></li>
+                            <li>Facebook application - functional competition</li>
+                        </ul>
+                        <ul>
+                            <li><h4><em>Print Graphist</em>, Inna Riddim; Sydney <time>2010-2011</time></h4></li>
+                            <li>Vinyl covers for Compa, Grimace, Juzlo, Ritual</li>
+                        </ul>
+                        <ul>
+                            <li><h4><em>Designer/ Flash Developer</em>, SYTWEB; Bordeaux <time>2005</time></h4></li>
+                            <li>- Prototyping user ineterfaces and design</li>
+                            <li>- Achieved successful completion of various client projects</li>
+                            <li>- Created XML and SQL components for flash</li>
+                        </ul>
+                        <ul>
+                            <li><h4>Creation of the website for a sculptor Baurens and the painter Pablo Corea <time>2004</time></h4></li>
+                            <li>- Photo realisation, prototype, integration and developement in PHP</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                <div id="education" class="subwrapper">
+                    <div class="section">
+                        <div class="leftsection">
+                            <h3>Education</h3>
+                        </div>
+                        <div class="rightsection">
+                            <ul>
+                                <li>SUPINFO , Paris - <em>European Masters' Degree</em>, Computer Science, <time>2006</time></li>
+                                <li>EPSI , Bordeaux - <em>Bachelors Degree</em>, <time>2003</time></li>
+                                <li>Saint Joseph , Perigeux - <em>IB Science</em> (equiv HSC), <time>2001</time></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -53,7 +305,7 @@
         <!-- endbuild -->
 
         <!-- build:js(.tmp) scripts/coffee.js -->
-        <script src="scripts/hello.js"></script>
+        <script src="scripts/intro.js"></script>
         <!-- endbuild -->
 </body>
 </html>

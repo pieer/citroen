@@ -8,11 +8,15 @@ body {
 body {
   background: radial-gradient(#fff, #bbb);
   font: 400 100% 'Raleway', sans-serif;
+  font: 100 100% Roboto,arial,sans-serif;
 }
 #main{
     overflow:hidden;
 }
 
+#intro{
+    display: none;
+}
 #panel2,
 #panel1{
     height: 0;
@@ -27,7 +31,6 @@ body {
     text-transform: uppercase;
     margin-top:-20px;
     opacity:0;
-    font-family: 'Audiowide', cursive;
     font-size:2em;
     color: #bbb;
 }
@@ -48,3 +51,9 @@ body {
         width: 50%;
     }
 }
+
+
+
+
+
+
