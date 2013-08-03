@@ -1,3 +1,5 @@
+@import "compass/css3/border-radius";
+
 html,
 body {
   height: 100%;
@@ -14,9 +16,6 @@ body {
     overflow:hidden;
 }
 
-#intro{
-    display: none;
-}
 #panel2,
 #panel1{
     height: 0;
@@ -55,5 +54,26 @@ body {
 
 
 
+#content{
+    display:none;
+    overflow:hidden;
+    #header{
+        height:0;
+        overflow:hidden;
+    }
+    #center_col,
+    #leftnav{
+        width:0;
+        overflow:hidden;
+    }
+}
 
 
+#photo{
+    background: url(../images/me.jpg) no-repeat;
+    height:80px;
+    width:80px;
+    float: left;
+    margin-left: 15px;
+    @include border-radius(50%);
+}
