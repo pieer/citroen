@@ -17,9 +17,9 @@ $(document).ready ->
   $center_col = $('#center_col')
   $leftnav = $('#leftnav')
   $current = $('.wrapper:first-child')
-  $next = {}
-  $current.css
-    left:'-800px'
+  $next = $current
+  $center_col.css
+    width: 0
 
   $photo = $('#photo')
 
@@ -106,12 +106,6 @@ $(document).ready ->
       ease: "Quint.easeOut"
     , '-=0.5'
 
-    ia.call ->
-      $intro.css
-        display:'none'
-
-      $('#content').css
-        display:'block'
 
     ia.call ->
       intiContent()
@@ -129,7 +123,7 @@ $(document).ready ->
         width: '80%'
 
     ia.to $current, 0.2,
-      left:'20%'
+      marginLeft: 0
     , '-=.2'
 
 
@@ -138,10 +132,12 @@ $(document).ready ->
 
 
   intiContent = ->
-    $("body").attr "id", "js"
-    current = "#profile"
+    $intro.hide()
 
-
+    $('#content').show()
+    $main.css
+      height: 'auto'
+    animContent()
     
     #var subcurrent = "#studyCase";
     # var subcurrent2 = "#officeWork";
@@ -150,9 +146,11 @@ $(document).ready ->
       e.preventDefault()
       $("#leftnav a.active").removeClass "active"
       $(this).addClass "active"
-      $next = $($(this).attr("href"))
+      href = $(this).attr("href")
+      $next = $(href)
       unless $next is $current
-        animContent()
+        animContent(href)
+
 
     ###
     $(".aw").each (index) ->
@@ -168,16 +166,29 @@ $(document).ready ->
           animContent()
     ###
 
-  animContent = ->
+    $('#pcontainer').isotope
+      itemSelector : '.item'
+
+
+  animContent = (href)->
     ca = new TimelineMax()
-    ca.to $current, 0.5,
-      left: "-100%"
-    ca.to $next, 0.5,
-      left: "20%"
 
-
-
-    $current = $next
+    ca.to $center_col, 0.5,
+      height:'0'
+    ca.call ->
+      $current.css
+        display: 'none'
+      $center_col.css
+        height: 'auto'
+        width: 0
+      $next.css
+        display: 'block'
+    ca.to $center_col, 0.5,
+      width:'80%'
+    ca.call ->
+      $current = $next
+      if(href = "#portfolio")
+        $('#pcontainer').isotope( 'reLayout' )
 
       
   if doIntro
@@ -188,10 +199,21 @@ $(document).ready ->
  
 
   #photo
-  
   $photo.hover ->
     TweenMax.to $photo, 0.2,
       borderRadius:"0%"
   , ->
     TweenMax.to $photo, 0.2,
       borderRadius:"50%"
+
+
+  $pcontainer = $('#pcontainer')
+
+  for key, website of app.data
+    $item = $('<div>')
+              .addClass('item ')
+              .css
+                background: "url(../images/large/#{website.thumb[0]}.jpg) no-repeat center center"
+    $pcontainer.append $item
+
+

@@ -1,5 +1,5 @@
 
-
+@import "compass/utilities/general/clearfix";
 
 @CHARSET "UTF-8";
 
@@ -86,12 +86,6 @@ h1 {
     .arob,
     span{
       background-color: #fff;
-      background-image: -webkit-gradient(linear,left top,left bottom, from(#fff),to(#fefefe));
-      background-image: -webkit-linear-gradient(top,#fff,#fefefe);
-      background-image: -moz-linear-gradient(top,#fff,#fefefe);
-      background-image: -ms-linear-gradient(top,#fff,#fefefe);
-      background-image: -o-linear-gradient(top,#fff,#fefefe);
-      background-image: linear-gradient(top,#fff,#fefefe);
       height: 28px;
       line-height: 28px;
       display: block;
@@ -107,14 +101,7 @@ h1 {
       width:50px;
       &:hover{
         background-color: #ccc;
-        border: 1px solid #ddd;
         color:#aaa;
-        background-image: -webkit-gradient(linear,left top,left bottom, from(#fefefe),to(#eee));
-        background-image: -webkit-linear-gradient(top,#fefefe,#eee);
-        background-image: -moz-linear-gradient(top,#fefefe,#eee);
-        background-image: -ms-linear-gradient(top,#fefefe,#eee);
-        background-image: -o-linear-gradient(top,#fefefe,#eee);
-        background-image: linear-gradient(top,#fefefe,#eee);
       }
     }
     #subpsd{
@@ -143,13 +130,14 @@ h1 {
 
 /*--------------------nav and subnav-----------------------*/
 #leftnav{
-  margin-top: 81px;
-  width: 220px;
-  height: 100%;
+  width: 20%;
+  height: 2000px;
+  margin-bottom:-1800px;
+  float:left;
+  margin-right:-1px;
   padding-top: 20px;
   min-height: 0px;
   background-color: white;
-  z-index: 4;
   border-right:1px solid #EBEBEB;
   padding-bottom:13px;
 }
@@ -204,68 +192,35 @@ h1 {
 .linklist{
   position:absolute;
   top:0;
-  left:180px;
+  left:20%;
 }
-/*no javascript solution*/
-#header,#leftnav{
-position: fixed;
-}
-#js #header,#js #leftnav{
-position: absolute;
-}
+
 /*---------------------Center column-------------*/
 #center_col{
-  margin-left: 212px;
-  padding: 0 8px;
+  float: left;
+  width:80%;
   overflow:hidden;
 }
 .subwrapper,
 .wrapper{
-  width:636px;
-  left:-100%;
   z-index:2;
   background-color:#fff;
-  margin-top:81px;
+  position: relative;
+  padding: 16px 5%;
+  @include clearfix;
 }
 
-.wrapper{
-  padding: 16px 30px;
+.textwrapper{
+  min-width:800px;
 }
-#js .subwrapper,
 .wrapper{
-  border-right:1px solid #EBEBEB;
-  border-bottom:1px solid #EBEBEB;
-}
-#js .subwrapper,
-#js .wrapper{
-  position: absolute;
-  top: 81px;
-  margin-top:0px;
-  padding: 16px 30px;
+  display:none;
 }
 
-.wrapper:first-child{
-  left:20%;
-}
-/*Init first colum*/
-#employment,
-#officeWork,
-#studyCase{
-  left: 0px;
-}
-#js .subwrapper{
-  top: 50px;
-}
 .subwrapper h3{
   display:none;
 }
-/*--------------------Canvas----------------------*/
-#canvas1{
-  position: absolute;
-  right: 0;
-  bottom:0;
-  z-index:3;
-}
+
 /*--------------------boxes-----------------------*/
 .box-title{
   display: block;
@@ -276,7 +231,6 @@ position: absolute;
 /*--------------------Section---------------------*/
 /*profile page*/
 #profile_desc {
-  float: left;
   padding-right: 38px;
   line-height: 23px;
 }
@@ -314,12 +268,7 @@ position: absolute;
 #freelance .smallImglist li{
   height: 50px;
 }
-#studyCase{
-  position:relative;
-}
-#js #studyCase{
-  position:absolute;
-}
+
 #interfaceDesign .smallImglist li {
   width: 202px;
   padding-left: 10px;
