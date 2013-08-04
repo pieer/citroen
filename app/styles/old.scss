@@ -130,19 +130,15 @@ h1 {
 
 /*--------------------nav and subnav-----------------------*/
 #leftnav{
-  width: 20%;
-  height: 2000px;
-  margin-bottom:-1800px;
-  float:left;
-  margin-right:-1px;
-  padding-top: 20px;
-  min-height: 0px;
   background-color: white;
-  border-right:1px solid #EBEBEB;
-  padding-bottom:13px;
+  border-right: 1px solid #EBEBEB;
+  margin-bottom: -2000px;
+  height: 2000px;
+  margin-left: -200px;
 }
 #leftnav ul{
   margin-left: 13px;
+  margin-top:20px;
 }
 .linklist a,
 #leftnav ul li a {
@@ -195,10 +191,20 @@ h1 {
   left:20%;
 }
 
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-top: 20px solid #f00;
+}
+
 /*---------------------Center column-------------*/
+.mainWrapper{
+  margin-left: 201px;
+}
 #center_col{
-  float: left;
-  width:80%;
   overflow:hidden;
 }
 .subwrapper,

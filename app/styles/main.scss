@@ -134,10 +134,18 @@ body {
     margin: 0 20px 20px 0;
     width:520px;
     height:282px;
-    &.small{
-        width:260px;
-        height:141px;
-        margin: 0 20px 20px 0;
+    overflow: hidden;
+    .itemImage{
+        width:520px;
+        height:282px; 
+        &.small{
+            width:260px;
+            height:141px;
+            margin: 0 20px 20px 0;
+        }
+    }
+    .itemWrapper{
+        width:10000px;
     }
 }
 

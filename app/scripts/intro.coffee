@@ -83,11 +83,11 @@ $(document).ready ->
       ease: "Quint.easeOut"
 
     ia.to $lastname, 1,
-      marginLeft:'+=1000'
+      marginLeft:'-=1000'
       ease: "Quint.easeIn"
 
     ia.to $firstname, 1,
-      marginLeft:'-=1000'
+      marginLeft:'+=1000'
       ease: "Quint.easeIn"
     ,'-=1'
 
@@ -115,12 +115,12 @@ $(document).ready ->
       ease: "Quint.easeOut"
 
     ia.to $leftnav, 0.2,
-      width: '20%'
+      width: '200px'
       ease: "Quint.easeOut"
 
     ia.call ->
       $center_col.css
-        width: '80%'
+        width: '100%'
 
     ia.to $current, 0.2,
       marginLeft: 0
@@ -132,12 +132,15 @@ $(document).ready ->
 
 
   intiContent = ->
-    $intro.hide()
+    $intro.remove()
 
     $('#content').show()
     $main.css
       height: 'auto'
     animContent()
+
+    $('.mainWrapper').css
+      minHeight: $mainY
     
     #var subcurrent = "#studyCase";
     # var subcurrent2 = "#officeWork";
@@ -184,18 +187,18 @@ $(document).ready ->
       $next.css
         display: 'block'
     ca.to $center_col, 0.5,
-      width:'80%'
+      width:'100%'
     ca.call ->
       $current = $next
       if(href = "#portfolio")
         $('#pcontainer').isotope( 'reLayout' )
+        initCarrou()
 
       
   if doIntro
     intro()
   else
-    $intro.css
-      display:'none'
+    $intro.remove()
  
 
   #photo
@@ -212,8 +215,41 @@ $(document).ready ->
   for key, website of app.data
     $item = $('<div>')
               .addClass('item ')
-              .css
-                background: "url(../images/large/#{website.thumb[0]}.jpg) no-repeat center center"
+    $itemWrapper = $('<div>')
+              .addClass('itemWrapper')
+              .attr 'nbItem', website.thumb.length
+    for image in website.thumb
+      $itemImage = $('<div>')
+                .addClass('itemImage ')
+                .css
+                  background: "url(../images/large/#{image}.jpg) no-repeat center center"
+                  float: 'left'
+      $itemWrapper.append $itemImage
+    
+    $item.append $itemWrapper
     $pcontainer.append $item
 
+  itemWrapperh = $('.item').innerWidth()
 
+  #itemTodisplay = -1
+  initCarrou = ->
+    itemWrapper = $('.itemWrapper')
+    requestInterval ->
+      ###
+      if itemTodisplay < itemWrapper.length
+        itemTodisplay+=1
+      else
+        itemTodisplay = -1
+      ###
+      itemTodisplay = Math.floor((Math.random()*itemWrapper.length)+1)
+      changeItem $(itemWrapper.get(itemTodisplay))
+      
+    , 5000
+      
+  changeItem = ($element) ->
+    if $element.css('marginLeft') isnt -(($element.attr('nbItem')-1)*itemWrapperh)+'px'
+      TweenMax.to $element, 0.2,
+        marginLeft: '-='+itemWrapperh
+    else
+      TweenMax.to $element, 2,
+        marginLeft: 0
