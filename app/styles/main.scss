@@ -9,8 +9,6 @@ body {
 
 body {
   background: radial-gradient(#fff, #bbb);
-  font: 400 100% 'Raleway', sans-serif;
-  font: 100 100% Roboto,arial,sans-serif;
 }
 #main{
     overflow:hidden;
@@ -61,11 +59,6 @@ body {
         height:0;
         overflow:hidden;
     }
-    /*#center_col,*/
-    #leftnav{
-        width:0;
-        overflow:hidden;
-    }
 }
 
 
@@ -73,8 +66,7 @@ body {
     background: url(../images/me.jpg) no-repeat;
     height:80px;
     width:80px;
-    float: left;
-    margin-left: 15px;
+    margin: 10px;
     @include border-radius(50%);
 }
 
@@ -315,3 +307,27 @@ body {
     .rs-caption { opacity: 0!important; }
 }
 */
+
+
+/* Panneles colors */
+
+#development,
+#portfolio {
+background-color: #34495e;
+}
+#profile {
+background-color: #60d7a9;
+}
+#interactionDesign {
+background-color: #fd6a62;
+}
+#interfaceDesign {
+background-color: #0ac2d2;
+}
+#printDesign {
+background-color: #fdc162;
+}
+#cv {
+background-color: #f68dbb;
+}
+

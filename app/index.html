@@ -11,6 +11,8 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css({.tmp,app}) styles/main.css -->
+        <link rel="stylesheet" href="styles/component.css">
+        <link rel="stylesheet" href="styles/demo.css">
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/old.css">
         <!-- endbuild -->
@@ -36,33 +38,32 @@
 
 
             <div id="content">
-                <div id="header">
-                    <div id="photo"></div>
-                    <h1> Pierre Schweiger</h1>
-                    <ul id="social">
-                        <li><a class="arob" href="mailto:schweiger.pierre@gmail.com" alt="Mail to schweiger.pierre@gmail.com">@</a></li>
+                <div class="mainWrapper">
+                    <ul id="gn-menu" class="gn-menu-main">
+                        <li class="gn-trigger">
+                            <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+                            <nav class="gn-menu-wrapper">
+                                <div class="gn-scroller">
+                                    <ul id="leftnav" class="gn-menu">
+                                        <li><a class="gn-icon gn-icon-download" href="#profile" class="active">Profile</a></li>
+                                        <li><a class="gn-icon gn-icon-download" href="#portfolio">Portfolio</a></li>
+                                        <li><a class="gn-icon gn-icon-download" href="#interactionDesign">Interaction design</a></li>
+                                        <li><a class="gn-icon gn-icon-download" href="#interfaceDesign">Interface design</a></li>
+                                        <li><a class="gn-icon gn-icon-download" href="#development">Development</a></li>
+                                        <li><a class="gn-icon gn-icon-download" href="#printDesign">Print design</a></li>
+                                        <li><a class="gn-icon gn-icon-download" href="#cv">CV</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </nav>
+                        </li>
                         <li>
-                            <span id="subpsd">
-                                PDF
-                                <a class="sublink" href="portfolio_pierre_schweiger.pdf" alt="Portfolio version pdf">Portfolio</a>
-                                <a class="sublink" href="Pierre_Schweiger_Interaction_designer.pdf" alt="CV version pdf">CV</a>
-                            </span>
+                            <h1> Pierre Schweiger</h1>
+                        </li>
+                        <li>
+                            <div id="photo"></div>
                         </li>
                     </ul>
-                    <h1 class="bigwhite"> Developer</h1>
-                </div>
-                <div class="mainWrapper">
-                    <div id="leftnav"> 
-                        <ul>
-                            <li><a href="#profile" class="active">Profile</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#interactionDesign">Interaction design</a></li>
-                            <li><a href="#interfaceDesign">Interface design</a></li>
-                            <li><a href="#development">Development</a></li>
-                            <li><a href="#printDesign">Print design</a></li>
-                            <li><a href="#cv">CV</a></li>
-                        </ul>
-                    </div>
                     <div id="center_col">
                         <div id="profile" class="wrapper textwrapper">
                             <div id="profile_desc" class="desc">
@@ -313,6 +314,8 @@
         <script src="scripts/TweenMax.min.js"></script>
         <script src="scripts/isotope.min.js"></script>
         <script src="scripts/vendor/timeout.js"></script>
+        <script src="scripts/vendor/classie.js"></script>
+        <script src="scripts/vendor/gnmenu.js"></script>
         <script src="scripts/portfolio.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->

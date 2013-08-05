@@ -13,9 +13,9 @@ $(document).ready ->
 
 
 
-  $header = $('#header')
+  $header = $('#gn-menu')
   $center_col = $('#center_col')
-  $leftnav = $('#leftnav')
+  
   $current = $('.wrapper:first-child')
   $next = $current
   $center_col.css
@@ -111,11 +111,7 @@ $(document).ready ->
       intiContent()
 
     ia.to $header, 0.5,
-      height: 80
-      ease: "Quint.easeOut"
-
-    ia.to $leftnav, 0.2,
-      width: '200px'
+      height: 60
       ease: "Quint.easeOut"
 
     ia.call ->
@@ -132,6 +128,7 @@ $(document).ready ->
 
 
   intiContent = ->
+    new gnMenu( document.getElementById( 'gn-menu' ) )
     $intro.remove()
 
     $('#content').show()
