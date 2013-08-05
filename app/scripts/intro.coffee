@@ -14,6 +14,9 @@ $(document).ready ->
 
 
   $header = $('#gn-menu')
+  $header.css
+    height: 0
+
   $center_col = $('#center_col')
   
   $current = $('.wrapper:first-child')
@@ -114,9 +117,9 @@ $(document).ready ->
       height: 60
       ease: "Quint.easeOut"
 
-    ia.call ->
-      $center_col.css
-        width: '100%'
+    ia.to $center_col, 0.5,
+      width: '100%'
+      ease: "Quint.easeOut"
 
     ia.to $current, 0.2,
       marginLeft: 0
@@ -134,77 +137,19 @@ $(document).ready ->
     $('#content').show()
     $main.css
       height: 'auto'
-    animContent()
 
     $('.mainWrapper').css
       minHeight: $mainY
-    
-    #var subcurrent = "#studyCase";
-    # var subcurrent2 = "#officeWork";
-    size = $(document).width() + "px"
-    $("#leftnav a").click (e) ->
-      e.preventDefault()
-      $("#leftnav a.active").removeClass "active"
-      $(this).addClass "active"
-      href = $(this).attr("href")
-      $next = $(href)
-      unless $next is $current
-        animContent(href)
 
-
-    ###
-    $(".aw").each (index) ->
-      elem = $(this)
-      subcurrent = "#" + elem.find(".subwrapper:first").attr("id")
-      console.log subcurrent
-      elem.find(".linklist a").click (e) ->
-        elem.find(".linklist a.active").removeClass "active"
-        $(this).addClass "active"
-        e.preventDefault()
-        ref = $(this).attr("href")
-        unless ref is subcurrent
-          animContent()
-    ###
 
     $('#pcontainer').isotope
       itemSelector : '.item'
-
-
-  animContent = (href)->
-    ca = new TimelineMax()
-
-    ca.to $center_col, 0.5,
-      height:'0'
-    ca.call ->
-      $current.css
-        display: 'none'
-      $center_col.css
-        height: 'auto'
-        width: 0
-      $next.css
-        display: 'block'
-    ca.to $center_col, 0.5,
-      width:'100%'
-    ca.call ->
-      $current = $next
-      if(href = "#portfolio")
-        $('#pcontainer').isotope( 'reLayout' )
-        initCarrou()
-
       
   if doIntro
     intro()
   else
     $intro.remove()
- 
-
-  #photo
-  $photo.hover ->
-    TweenMax.to $photo, 0.2,
-      borderRadius:"0%"
-  , ->
-    TweenMax.to $photo, 0.2,
-      borderRadius:"50%"
+    intiContent()
 
 
   $pcontainer = $('#pcontainer')

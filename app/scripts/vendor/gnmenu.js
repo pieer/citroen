@@ -27,6 +27,7 @@
 	gnMenu.prototype = {
 		_init : function() {
 			this.trigger = this.el.querySelector( 'a.gn-icon-menu' );
+
 			this.menu = this.el.querySelector( 'nav.gn-menu-wrapper' );
 			this.isMenuOpen = false;
 			this.eventtype = mobilecheck() ? 'touchstart' : 'click';
@@ -51,6 +52,18 @@
 				} );
 			}
 			this.trigger.addEventListener( this.eventtype, function( ev ) {
+				ev.stopPropagation();
+				ev.preventDefault();
+				if( self.isMenuOpen ) {
+					self._closeMenu();
+					document.removeEventListener( self.eventtype, self.bodyClickFn );
+				}
+				else {
+					self._openMenu();
+					document.addEventListener( self.eventtype, self.bodyClickFn );
+				}
+			} );
+			this.menu.addEventListener( this.eventtype, function( ev ) {
 				ev.stopPropagation();
 				ev.preventDefault();
 				if( self.isMenuOpen ) {
