@@ -31,41 +31,15 @@ var PageTransitions = (function() {
 
     $pages.eq( current ).addClass( 'pt-page-current' );
 
-    /*$( '#dl-menu' ).dlmenu( {
-      animationClasses : { in : 'dl-animate-in-2', out : 'dl-animate-out-2' },
-      onLinkClick : function( el, ev ) {
-        ev.preventDefault();
-        nextPage( el.data( 'animation' ) );
-      }
-    } );*/
+    this.eventtype = mobilecheck() ? 'touchstart' : 'click';
 
-    $("#leftnav a").on('click',function( e ) {
+    $("#leftnav a").on(this.eventtype,function( e ) {
         e.preventDefault();
         next = $(this).data( 'page' )
         if(next !== current){
           nextPage( $(this).data( 'animation' ));
         }
       })
-
-      /*(e) ->
-      e.preventDefault()
-      $("#leftnav a.active").removeClass "active"
-      $(this).addClass "active"
-      href = $(this).attr("href")
-      $next = $(href)
-      unless $next is $current
-        animContent(href)*/
-
-    $iterate.on( 'click', function() {
-      if( isAnimating ) {
-        return false;
-      }
-      if( animcursor > 67 ) {
-        animcursor = 1;
-      }
-      nextPage( animcursor );
-      ++animcursor;
-    } );
 
   }
 
@@ -79,12 +53,6 @@ var PageTransitions = (function() {
     
     var $currPage = $pages.eq( current );
     current = next;
-    /*if( current < pagesCount - 1 ) {
-      ++current;
-    }
-    else {
-      current = 0;
-    }*/
 
     var $nextPage = $pages.eq( current ).addClass( 'pt-page-current' ),
       outClass = '', inClass = '';

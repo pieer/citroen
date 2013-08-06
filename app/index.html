@@ -9,12 +9,12 @@
     <title>Pierre Schweiger</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/component.css">
     <link rel="stylesheet" href="styles/page-transition.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/old.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -58,7 +58,7 @@
                                         <a data-page="3" data-animation="16" class="gn-icon gn-icon-paint-format" href="#printDesign">Design</a>
                                     </li>
                                     <li>
-                                        <a data-page="4" data-animation="2"class="gn-icon gn-icon-books" href="#cv">CV</a>
+                                        <a data-page="4" data-animation="53"class="gn-icon gn-icon-books" href="#cv">CV</a>
                                     </li>
                                     
                                 </ul>
@@ -97,6 +97,16 @@
                             <div id="portfolio" class="wrapper">
                                 <div class="desc">
                                     <h2>Portfolio</h2>
+                                    <div id="dropdown-wrapper">
+                                        <select id="cd-dropdown" class="cd-select">
+                                            <option value="website" class="gn-icon gn-icon-screen" selected>Website</option>
+                                            <option value="mobile" class="gn-icon gn-icon-mobile">Mobile</option>
+                                            <option value="tablet" class="gn-icon gn-icon-tablet">Tablet</option>
+                                            <option value="webapp" class="gn-icon gn-icon-html5-2">Web App</option>
+                                            <option value="facebooktab" class="gn-icon gn-icon-facebook">Facebook Tab</option>
+                                            <option value="edm" class="gn-icon gn-icon-mail">EDM</option>
+                                        </select>
+                                    </div>
                                     <div id="pcontainer"></div>
                                 </div>
                             </div>
@@ -269,13 +279,13 @@
     <script src="scripts/vendor/timeout.js"></script>
     <script src="scripts/vendor/classie.js"></script>
     <script src="scripts/vendor/gnmenu.js"></script>
+    <script src="scripts/vendor/jquery.dropdown.js"></script>
 
     <!-- build:js(.tmp) scripts/coffee.js -->
     <script src="scripts/intro.js"></script>
     <!-- endbuild -->
     <script src="scripts/page-transition.js"></script>
     <script src="scripts/portfolio.js"></script>
-    <script src="scripts/main.js"></script>
     <!-- endbuild -->
 </body>
 </html>

@@ -141,6 +141,8 @@ $(document).ready ->
     $('.mainWrapper').css
       minHeight: $mainY
 
+    $( '#cd-dropdown' ).dropdown()
+    
 
     $('#pcontainer').isotope
       itemSelector : '.item'
@@ -157,6 +159,8 @@ $(document).ready ->
   for key, website of app.data
     $item = $('<div>')
               .addClass('item ')
+    for typ in website.type
+      $item.addClass(typ)
     $itemWrapper = $('<div>')
               .addClass('itemWrapper')
               .attr 'nbItem', website.thumb.length
