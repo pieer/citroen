@@ -144,10 +144,9 @@
 				if( self.opened ) {
 					var opt = $( this );
 					self.options.onOptionSelect( opt );
-					self.inputEl.val( opt.data( 'value' ) );
+					self.inputEl.val( opt.data( 'value' ) ).change();
 					self.selectlabel.html( opt.html() );
 					self.close();
-					$('#pcontainer').isotope({ filter: '.'+opt.data( 'value' ) });
 				}
 			} );
 

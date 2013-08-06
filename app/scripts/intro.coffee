@@ -142,11 +142,26 @@ $(document).ready ->
       minHeight: $mainY
 
     $( '#cd-dropdown' ).dropdown()
-    
+
 
     $('#pcontainer').isotope
       itemSelector : '.item'
-      
+
+    $('#dropdown-wrapper input').on 'change', ->
+      filterby = $(this).val()
+
+      $('#pcontainer').isotope({ filter: '.'+ filterby}).isotope('shuffle')
+
+      $('.itemWrapper').each (index,element) ->
+        ml = 0
+        if(filterby is 'mobile')
+          ml = -(($(element).attr('nbItem')-1)*itemWrapperW)+'px'
+        $(element).css
+          marginLeft: ml
+
+    initCarrou()
+    
+
   if doIntro
     intro()
   else
@@ -156,9 +171,13 @@ $(document).ready ->
 
   $pcontainer = $('#pcontainer')
 
+  thumbsize = 'large'
+  if($mainX<=1440)
+    thumbsize = 'normal'
+
   for key, website of app.data
     $item = $('<div>')
-              .addClass('item ')
+              .addClass('item '+thumbsize)
     for typ in website.type
       $item.addClass(typ)
     $itemWrapper = $('<div>')
@@ -175,7 +194,7 @@ $(document).ready ->
     $item.append $itemWrapper
     $pcontainer.append $item
 
-  itemWrapperh = $('.item').innerWidth()
+  itemWrapperW = $('.item').innerWidth()
 
   #itemTodisplay = -1
   initCarrou = ->
@@ -190,12 +209,12 @@ $(document).ready ->
       itemTodisplay = Math.floor((Math.random()*itemWrapper.length)+1)
       changeItem $(itemWrapper.get(itemTodisplay))
       
-    , 5000
+    , 2000
       
   changeItem = ($element) ->
-    if $element.css('marginLeft') isnt -(($element.attr('nbItem')-1)*itemWrapperh)+'px'
-      TweenMax.to $element, 0.2,
-        marginLeft: '-='+itemWrapperh
+    if $element.css('marginLeft') isnt -(($element.attr('nbItem')-1)*itemWrapperW)+'px'
+      TweenMax.to $element, 0.5,
+        marginLeft: '-='+itemWrapperW
     else
-      TweenMax.to $element, 2,
+      TweenMax.to $element, 0.5,
         marginLeft: 0
