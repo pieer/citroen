@@ -56,9 +56,9 @@ $(document).ready ->
 
   $firstname.css
     marginTop: $centery + 20
-    marginLeft: $centerx - 50
+    marginLeft: $centerx - 120
   $lastname.css
-    marginLeft: $centerx - 80
+    marginLeft: $centerx - 150
 
   intro = ->
 

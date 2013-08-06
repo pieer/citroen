@@ -72,6 +72,41 @@ img{
     max-width:100%;
 }
 
+.linklist{
+
+    list-style-type: none;
+    position: absolute;
+    top: 137px;
+    right: 59px;
+    line-height: 12px;
+
+    li {
+      height: 15px;
+      float: left;
+      margin-right: 0px;
+      border-right: 1px solid #fff;
+      padding: 0 20px;
+    }
+     
+    li:last-child {
+      border-right: none;
+    }
+     
+    li a {
+      text-decoration: none;
+      color: white;
+    }
+     
+    li a:hover {
+      color: #333;
+    }
+     
+    li.active a {
+      font-weight: bold;
+      color: #333;
+    }
+}
+
 #panel2,
 #panel1{
     height: 0;

@@ -56,8 +56,13 @@ var PageTransitions = (function() {
 
     var $nextPage = $pages.eq( current ).addClass( 'pt-page-current' ),
       outClass = '', inClass = '';
+    minHeight = $nextPage.find('.wrapper').outerHeight();
+    winHeight = $(window).outerHeight();
+    if(minHeight<= winHeight){
+      $nextPage.find('.wrapper').css({'height': winHeight});
+    }
     $center_col.css({
-      height: $nextPage.find('.wrapper').outerHeight()
+      height: minHeight
     });
 
     switch( animation ) {
