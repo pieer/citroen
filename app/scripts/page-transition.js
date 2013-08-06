@@ -57,7 +57,7 @@ var PageTransitions = (function() {
     var $nextPage = $pages.eq( current ).addClass( 'pt-page-current' ),
       outClass = '', inClass = '';
     $center_col.css({
-      height: $nextPage.find('.wrapper').height()
+      height: $nextPage.find('.wrapper').outerHeight()
     });
 
     switch( animation ) {
