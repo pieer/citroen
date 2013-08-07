@@ -175,26 +175,38 @@ $(document).ready ->
   if($mainX<=1440)
     thumbsize = 'normal'
 
+  # Add website
   for key, website of app.data
     $item = $('<div>')
               .addClass('item '+thumbsize)
+    # Category of the website
     for typ in website.type
       $item.addClass(typ)
+
+    # wrapper
     $itemWrapper = $('<div>')
-              .addClass('itemWrapper')
+              .addClass('itemWrapper view view-first')
               .attr 'nbItem', website.thumb.length
-    for image in website.thumb
-      $itemImage = $('<div>')
-                .addClass('itemImage ')
-                .css
-                  background: "url(../images/large/#{image}.jpg) no-repeat center center"
-                  float: 'left'
-      $itemWrapper.append $itemImage
-    
+    # Add all the images
+    # for image in website.thumb
+    $itemImage = $('<div>')
+              .addClass('itemImage ')
+              .css
+                background: "url(../images/large/#{website.thumb[0]}.jpg) no-repeat center center"
+                float: 'left'
+    $itemWrapper.append $itemImage
+
+    desc = $('<div>').addClass('mask')
+            .append($('<h2>').append(website.name))
+            .append('<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p><a href="#" class="info">Read More</a>')
+
+    $itemWrapper.append desc
     $item.append $itemWrapper
     $pcontainer.append $item
 
   itemWrapperW = $('.item').innerWidth()
+
+  
 
   #itemTodisplay = -1
   initCarrou = ->
