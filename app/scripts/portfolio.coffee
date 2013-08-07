@@ -1,7 +1,6 @@
 window.app = {}
 
 window.app.portfolio = {
-    size: 'normal'
     websites:[
         name: 'Share the softness'
         type: ['website', 'mobile', 'webapp', 'tablet']

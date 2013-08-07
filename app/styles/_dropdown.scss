@@ -4,15 +4,17 @@
 #dropdown-wrapper {
 position: absolute;
 top: 90px;
-right: 200px;
+right: 95px;
 z-index: 400;
 }
-@media screen and (max-width: 422px) { 
+
+@media screen and (max-width: 700px) { 
   #dropdown-wrapper {
   position: relative;
   top: 0;
   right: auto;
   z-index: 400;
+  margin-left: -15px;
   }
 }
 .cd-dropdown,

@@ -12,8 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/component.css">
-    <link rel="stylesheet" href="styles/page-transition.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
@@ -233,6 +231,9 @@
                             </div>
                         </div>
                         <div class="pt-page pt-page-6">
+                            test
+                        </div>
+                        <div class="pt-page pt-page-7">
                             <video id="video" width="640" height="480" autoplay></video>
                             <canvas id="canvas" width="640" height="480"></canvas>
                         </div>
@@ -276,13 +277,13 @@
 
     <script id="portfolio-template" type="text/x-handlebars-template">
         {{#each websites}}
-            <div class="item {{../size}} {{#each type}} {{this}} {{/each}}">
+            <div class="item {{#each type}} {{this}} {{/each}}">
                 <div class="itemWrapper view view-first" data-num="{{@index}}">
-                    <img class="itemImage" src="images/large/{{thumb.[0]}}.jpg">
+                    <img src="images/large/{{thumb.[0]}}.jpg">
                     <div class="mask">
                         <h2>{{name}}</h2>
                         <p>{{client}}</p>
-                        <a href="#" class="info">Read More</a>
+                        <a data-page="6" data-animation="13" href="#info" class="info">Read More</a>
                     </div>
                 </div>
             </div>

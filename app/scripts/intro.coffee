@@ -11,8 +11,6 @@ $(document).ready ->
   $lastname = $('#lastname')
   $line = $('.line')
 
-
-
   $header = $('#gn-menu')
   $header.css
     height: 0
@@ -130,6 +128,9 @@ $(document).ready ->
       scale: 0
 
 
+  # portfolio container
+  $pcontainer = $('#pcontainer')
+
   intiContent = ->
     new gnMenu( document.getElementById( 'gn-menu' ) )
     $intro.remove()
@@ -144,13 +145,13 @@ $(document).ready ->
     $( '#cd-dropdown' ).dropdown()
 
 
-    $('#pcontainer').isotope
+    $pcontainer.isotope
       itemSelector : '.item'
 
     $('#dropdown-wrapper input').on 'change', ->
       filterby = $(this).val()
 
-      $('#pcontainer').isotope({ filter: '.'+ filterby}).isotope('shuffle')
+      $pcontainer.isotope({ filter: '.'+ filterby}).isotope('shuffle')
 
       $('.itemWrapper').each (index,element) ->
         ml = 0
@@ -159,6 +160,8 @@ $(document).ready ->
         $(element).css
           marginLeft: ml
     
+    $(window).resize ->
+      $pcontainer.isotope 'reLayout'
 
   if doIntro
     intro()
@@ -167,21 +170,13 @@ $(document).ready ->
     intiContent()
 
 
-  $pcontainer = $('#pcontainer')
-
-  thumbsize = 'large'
-  if($mainX<=1440)
-    app.portfolio.size = 'normal'
-
-
-
+  # Add portfolio content
   source   = $("#portfolio-template").html()
   template = Handlebars.compile(source)
-
   html    = template(app.portfolio)
-  $('#pcontainer').append(html)
+  $pcontainer.append(html)
 
-
+  # Add timeline content
   source   = $("#timeline-template").html()
   template = Handlebars.compile(source)
   html    = template(app.timeline)
