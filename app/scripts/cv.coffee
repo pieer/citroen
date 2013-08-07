@@ -1,6 +1,6 @@
 window.app.timeline = {
   section: [
-    name: 'employment'
+    name: 'large'
     content: [
         period:  '2011-2013'
         title:   'Senior developer'
@@ -99,7 +99,7 @@ window.app.timeline = {
         title:   'Designer/ Flash Developer'
         company: 'Independent'
         place:   'Bordeaux'
-        image:   'saintjo'
+        image:   'pablo'
         description: 'Creation of the website for a sculptor Baurens and the painter Pablo Corea. My responsibilities include:'
         tasks: [
           'Photo realisation, prototype, integration and developement in PHP'
@@ -126,7 +126,7 @@ window.app.timeline = {
         title:   'IB Science (equiv HSC)'
         company: 'Saint Joseph'
         place:   'Perigeux'
-        image:   'epsi'
+        image:   'santjo'
         description: 'Computer Science'
       ,
     ]

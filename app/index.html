@@ -226,7 +226,7 @@
                                 <h2>Curriculum Vitae</h2>
                                 <ul class="linklist">
                                     <li><a href="#employment" class="active">Employment</a></li>
-                                    <li><a href="#freelance2">Freelance Work</a></li>
+                                    <li><a href="#freelance">Freelance Work</a></li>
                                     <li><a href="#education">Education</a></li>
                                 </ul>
                               
@@ -244,14 +244,14 @@
 
     <script id="timeline-template" type="text/x-handlebars-template">
         {{#each section}}
-            <div class="section">
+            <div id="{{name}}" class="section">
                 <h3>{{name}}</h3>
                 <ul class="timeline">
                 {{#each content}}
                     <li class="event">
                         <input type="radio" name="tl-group"/>
-                        <label></label>
-                        <div class="thumb user-{{@index}}"><span>{{period}}</span></div>
+                        <label>{{@index}}</label>
+                        <div class="thumb th-{{image}}"><span>{{period}}</span></div>
                         <div class="content-perspective">
                             <div class="content">
                                 <div class="content-inner">
@@ -269,6 +269,22 @@
                     </li>
                 {{/each}}
                 </ul>
+            </div>
+        {{/each}}
+    </script>
+
+
+    <script id="portfolio-template" type="text/x-handlebars-template">
+        {{#each websites}}
+            <div class="item {{../size}} {{#each type}} {{this}} {{/each}}">
+                <div class="itemWrapper view view-first" data-num="{{@index}}">
+                    <img class="itemImage" src="images/large/{{thumb.[0]}}.jpg">
+                    <div class="mask">
+                        <h2>{{name}}</h2>
+                        <p>{{client}}</p>
+                        <a href="#" class="info">Read More</a>
+                    </div>
+                </div>
             </div>
         {{/each}}
     </script>

@@ -158,8 +158,6 @@ $(document).ready ->
           ml = -(($(element).attr('nbItem')-1)*itemWrapperW)+'px'
         $(element).css
           marginLeft: ml
-
-    initCarrou()
     
 
   if doIntro
@@ -173,67 +171,19 @@ $(document).ready ->
 
   thumbsize = 'large'
   if($mainX<=1440)
-    thumbsize = 'normal'
-
-  # Add website
-  for key, website of app.portfolio
-    $item = $('<div>')
-              .addClass('item '+thumbsize)
-    # Category of the website
-    for typ in website.type
-      $item.addClass(typ)
-
-    # wrapper
-    $itemWrapper = $('<div>')
-              .addClass('itemWrapper view view-first')
-              .attr 'nbItem', website.thumb.length
-    # Add all the images
-    # for image in website.thumb
-    $itemImage = $('<div>')
-              .addClass('itemImage ')
-              .css
-                background: "url(../images/large/#{website.thumb[0]}.jpg) no-repeat center center"
-                float: 'left'
-    $itemWrapper.append $itemImage
-
-    desc = $('<div>').addClass('mask')
-            .append($('<h2>').append(website.name))
-            .append('<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p><a href="#" class="info">Read More</a>')
-
-    $itemWrapper.append desc
-    $item.append $itemWrapper
-    $pcontainer.append $item
-
-  itemWrapperW = $('.item').innerWidth()
+    app.portfolio.size = 'normal'
 
 
+
+  source   = $("#portfolio-template").html()
+  template = Handlebars.compile(source)
+
+  html    = template(app.portfolio)
+  $('#pcontainer').append(html)
 
 
   source   = $("#timeline-template").html()
   template = Handlebars.compile(source)
-  html    = template(window.app.timeline)
+  html    = template(app.timeline)
   $('#cv').append(html)
   
-
-  #itemTodisplay = -1
-  initCarrou = ->
-    itemWrapper = $('.itemWrapper')
-    requestInterval ->
-      ###
-      if itemTodisplay < itemWrapper.length
-        itemTodisplay+=1
-      else
-        itemTodisplay = -1
-      ###
-      itemTodisplay = Math.floor((Math.random()*itemWrapper.length)+1)
-      changeItem $(itemWrapper.get(itemTodisplay))
-      
-    , 2000
-      
-  changeItem = ($element) ->
-    if $element.css('marginLeft') isnt -(($element.attr('nbItem')-1)*itemWrapperW)+'px'
-      TweenMax.to $element, 0.5,
-        marginLeft: '-='+itemWrapperW
-    else
-      TweenMax.to $element, 0.5,
-        marginLeft: 0
