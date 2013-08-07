@@ -176,7 +176,7 @@ $(document).ready ->
     thumbsize = 'normal'
 
   # Add website
-  for key, website of app.data
+  for key, website of app.portfolio
     $item = $('<div>')
               .addClass('item '+thumbsize)
     # Category of the website

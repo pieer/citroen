@@ -1,6 +1,6 @@
 window.app = {}
 
-window.app.data = [
+window.app.portfolio = [
     name: 'Share the softness'
     type: ['website', 'mobile', 'webapp', 'tablet']
     client: 'Viva'
