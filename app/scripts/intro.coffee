@@ -206,6 +206,13 @@ $(document).ready ->
 
   itemWrapperW = $('.item').innerWidth()
 
+
+
+
+  source   = $("#timeline-template").html()
+  template = Handlebars.compile(source)
+  html    = template(window.app.timeline)
+  $('#cv').append(html)
   
 
   #itemTodisplay = -1
