@@ -1,7 +1,6 @@
 $(document).ready ->
   doIntro = true
 
-
   $intro = $('#intro')
   $main = $('#main')
   
@@ -16,11 +15,7 @@ $(document).ready ->
     height: 0
 
   $center_col = $('#center_col')
-  
-  $current = $('.wrapper:first-child')
-  $next = $current
-  $center_col.css
-    width: 0
+
 
   $photo = $('#photo')
 
@@ -119,10 +114,6 @@ $(document).ready ->
       width: '100%'
       ease: "Quint.easeOut"
 
-    ia.to $current, 0.2,
-      marginLeft: 0
-    , '-=.2'
-
 
     ia.from $photo, .5,
       scale: 0
@@ -132,9 +123,11 @@ $(document).ready ->
   $pcontainer = $('#pcontainer')
 
   intiContent = ->
-    new gnMenu( document.getElementById( 'gn-menu' ) )
     $intro.remove()
 
+    #initMenu
+    new gnMenu( document.getElementById( 'gn-menu' ) )
+    
     $('#content').show()
     $main.css
       height: 'auto'
@@ -142,32 +135,26 @@ $(document).ready ->
     $('.mainWrapper').css
       minHeight: $mainY
 
-    $( '#cd-dropdown' ).dropdown()
-
+    $('#cd-dropdown').dropdown()
 
     $pcontainer.isotope
       itemSelector : '.item'
+      filter: '.website'
 
     $('#dropdown-wrapper input').on 'change', ->
       filterby = $(this).val()
-
       $pcontainer.isotope({ filter: '.'+ filterby}).isotope('shuffle')
+      if(filterby is 'mobile')
+        $pcontainer.addClass('displayMobile')
+      else
+        $pcontainer.removeClass('displayMobile')
 
-      $('.itemWrapper').each (index,element) ->
-        ml = 0
-        if(filterby is 'mobile')
-          ml = -(($(element).attr('nbItem')-1)*itemWrapperW)+'px'
-        $(element).css
-          marginLeft: ml
     
     $(window).resize ->
       $pcontainer.isotope 'reLayout'
 
-  if doIntro
-    intro()
-  else
-    $intro.remove()
-    intiContent()
+  Handlebars.registerHelper "displayMobile", (thumb)->
+    new Handlebars.SafeString '<img class="mobileImg" src="images/large/'+thumb[thumb.length-1]+'.jpg"/>'
 
 
   # Add portfolio content
@@ -181,4 +168,21 @@ $(document).ready ->
   template = Handlebars.compile(source)
   html    = template(app.timeline)
   $('#cv').append(html)
+
+  #init info page
+  $('.readmore').on 'click', (e)->
+    e.preventDefault()
+    source   = $("#info-template").html()
+    template = Handlebars.compile(source)
+    html    = template(app.portfolio.websites[$(this).data('page')])
+    $('#info').html(html)
+    setTimeout ->
+      $('#infolink').click()
+    , 100
+
+  if doIntro
+    intro()
+  else
+    $intro.remove()
+    intiContent()
   

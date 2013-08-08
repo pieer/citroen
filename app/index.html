@@ -58,7 +58,9 @@
                                     <li>
                                         <a data-page="4" data-animation="53"class="gn-icon gn-icon-books" href="#cv">CV</a>
                                     </li>
-                                    
+                                    <li style="display: none">
+                                        <a id="infolink" data-page="5" data-animation="53" href="info">Info</a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
@@ -70,7 +72,6 @@
                         <div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
                              <div id="photo" class="hi-icon hi-icon-images"></div>
                         </div>
-                       
                     </li>
                 </ul>
                 <div id="center_col">
@@ -79,7 +80,7 @@
                             <div id="profile" class="wrapper">
                                 <div id="profile_desc" class="desc">
                                     <h2>Web development and UI design</h2>
-                                
+                                <!--Fixated on HTML5, JavaScript, CSS3, OOCSS/BEM, Sass/SCSS, Grunt.js, RWD, AngularJS, declarative data-binding, MVC/MVVM, front-end architecture. -->
                                     <p>After having developed my teaching skills by sharing my programming knowledge through lecturing in different universities, I took the step to move into front end developing. Design was more of a passion for me than the architecture of a database.</p>
                                     <img src="images/ratecity1.jpg" alt="Home page Ratecity.com.au" />
                                     <p>At this time UX design was a nascent industry, and I continued independent research across the web, studying the different forms of web interaction.</p>
@@ -231,7 +232,8 @@
                             </div>
                         </div>
                         <div class="pt-page pt-page-6">
-                            test
+                            <a id="backto" data-page="1" data-animation="53" class="gn-icon gn-icon-arrow-left" href="#portfolio">Return</a>
+                            <div id="info" class="wrapper"></div>
                         </div>
                         <div class="pt-page pt-page-7">
                             <video id="video" width="640" height="480" autoplay></video>
@@ -250,7 +252,7 @@
                 <ul class="timeline">
                 {{#each content}}
                     <li class="event">
-                        <input type="radio" name="tl-group"/>
+                        <input type="radio" name="tl-group" {{#unless @index}}checked{{/unless}}/>
                         <label>{{@index}}</label>
                         <div class="thumb th-{{image}}"><span>{{period}}</span></div>
                         <div class="content-perspective">
@@ -278,18 +280,49 @@
     <script id="portfolio-template" type="text/x-handlebars-template">
         {{#each websites}}
             <div class="item {{#each type}} {{this}} {{/each}}">
-                <div class="itemWrapper view view-first" data-num="{{@index}}">
-                    <img src="images/large/{{thumb.[0]}}.jpg">
-                    <div class="mask">
-                        <h2>{{name}}</h2>
-                        <p>{{client}}</p>
-                        <a data-page="6" data-animation="13" href="#info" class="info">Read More</a>
+                <a data-page="{{@index}}" href="#info" class="readmore">
+                    <div class="view view-first" data-num="">
+                        <img src="images/large/{{thumb.[0]}}.jpg"/>
+                        {{#if mobile}}
+                            {{displayMobile thumb}}
+                        {{/if}}
+                        <div class="mask">
+                            <h2>{{name}}</h2>
+                            <p>{{client}}</p>
+                            <span class="info">Read More</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         {{/each}}
     </script>
 
+
+    <script id="info-template" type="text/x-handlebars-template">
+        <h2>{{name}}</h2>
+        <h3>{{client}}</h3>
+        <div class="infowrapper">
+            {{#with link}}
+                <p>
+                    <a href="{{link}}" target="_blank">Visit the website</a>
+                </p>
+            {{/with}}
+            {{#with video}}
+                <h4>Video:</h4>
+                <iframe width="560" height="315" src="//www.youtube.com/embed/{{this}}" frameborder="0" allowfullscreen></iframe>
+            {{/with}}
+            {{#with vimeo}}
+                <h4>Video:</h4>
+                <iframe src="http://player.vimeo.com/video/{{this}}" width="560" height="315" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            {{/with}}
+        </div>
+        <h4>Gallery</h4>
+        <div class="fotorama">
+            {{#each thumb}}
+              <img src="images/large/{{this}}.jpg">
+            {{/each}}
+        </div>
+    </script>
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->

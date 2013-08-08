@@ -1,6 +1,6 @@
 window.app.timeline = {
   section: [
-    name: 'large'
+    name: 'employment'
     content: [
         period:  '2011-2013'
         title:   'Senior developer'

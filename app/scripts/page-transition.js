@@ -33,7 +33,7 @@ var PageTransitions = (function() {
 
     this.eventtype = mobilecheck() ? 'touchstart' : 'click';
 
-    $("#leftnav a").on(this.eventtype,function( e ) {
+    $("#leftnav a, #backto").on(this.eventtype,function( e ) {
         e.preventDefault();
         next = $(this).data( 'page' )
         if(next !== current){
