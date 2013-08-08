@@ -10,11 +10,14 @@ z-index: 400;
 
 @media screen and (max-width: 700px) { 
   #dropdown-wrapper {
-  position: relative;
-  top: 0;
-  right: auto;
-  z-index: 400;
-  margin-left: -15px;
+    position: relative;
+    top: 0;
+    right: auto;
+    z-index: 400;
+    margin-left: -15px;
+    .cd-dropdown, .cd-select{
+      margin: 20px auto 30px auto;
+    }
   }
 }
 .cd-dropdown,

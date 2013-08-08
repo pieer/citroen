@@ -1,8 +1,10 @@
 $(document).ready ->
-  doIntro = true
 
   $intro = $('#intro')
   $main = $('#main')
+
+  $center_col = $('#center_col')
+  $photo = $('#photo')
   
   $panel1 = $('#panel1')
   $panel2 = $('#panel2')
@@ -13,11 +15,6 @@ $(document).ready ->
   $header = $('#gn-menu')
   $header.css
     height: 0
-
-  $center_col = $('#center_col')
-
-
-  $photo = $('#photo')
 
 
   $mainX = $(window).width()
@@ -53,7 +50,7 @@ $(document).ready ->
   $lastname.css
     marginLeft: $centerx - 150
 
-  intro = ->
+  app.intro = ->
 
     ia = new TimelineMax(delay:0.5)
     ia.to $line, 1,
@@ -70,8 +67,6 @@ $(document).ready ->
       marginTop: '+=20'
       opacity: 1
       ease: "Quint.easeOut"
-
-
 
     ia.to $intro, 0.5,
       rotation: -45
@@ -104,85 +99,39 @@ $(document).ready ->
 
 
     ia.call ->
-      intiContent()
+      app.intiContent()
+      $center_col.css
+        height: $('#profile').height()
 
     ia.to $header, 0.5,
       height: 60
       ease: "Quint.easeOut"
 
-    ia.to $center_col, 0.5,
-      width: '100%'
+    ia.from $center_col, 0.5,
+      width: '0%'
       ease: "Quint.easeOut"
 
 
     ia.from $photo, .5,
       scale: 0
 
+    ia.from $('.ipad'), .3,
+      marginLeft:'-400px'
+      opacity:0
+      delay:0.5
 
-  # portfolio container
-  $pcontainer = $('#pcontainer')
+    ia.from $('.notebook'), .3,
+      marginLeft:'-400px'
+      opacity:0
 
-  intiContent = ->
-    $intro.remove()
-
-    #initMenu
-    new gnMenu( document.getElementById( 'gn-menu' ) )
-    
-    $('#content').show()
-    $main.css
-      height: 'auto'
-
-    $('.mainWrapper').css
-      minHeight: $mainY
-
-    $('#cd-dropdown').dropdown()
-
-    $pcontainer.isotope
-      itemSelector : '.item'
-      filter: '.website'
-
-    $('#dropdown-wrapper input').on 'change', ->
-      filterby = $(this).val()
-      $pcontainer.isotope({ filter: '.'+ filterby}).isotope('shuffle')
-      if(filterby is 'mobile')
-        $pcontainer.addClass('displayMobile')
-      else
-        $pcontainer.removeClass('displayMobile')
-
-    
-    $(window).resize ->
-      $pcontainer.isotope 'reLayout'
-
-  Handlebars.registerHelper "displayMobile", (thumb)->
-    new Handlebars.SafeString '<img class="mobileImg" src="images/large/'+thumb[thumb.length-1]+'.jpg"/>'
+    ia.from $('.iphone'), .3,
+      marginLeft:'-400px'
+      opacity:0
 
 
-  # Add portfolio content
-  source   = $("#portfolio-template").html()
-  template = Handlebars.compile(source)
-  html    = template(app.portfolio)
-  $pcontainer.append(html)
+    ia.staggerFrom($('.paper h2, .paper p'), 1,
+      marginLeft:"-2000"
+      alpha:0
+      ease: "Quint.easeOut"
+    , 0.2)
 
-  # Add timeline content
-  source   = $("#timeline-template").html()
-  template = Handlebars.compile(source)
-  html    = template(app.timeline)
-  $('#cv').append(html)
-
-  #init info page
-  $('.readmore').on 'click', (e)->
-    e.preventDefault()
-    source   = $("#info-template").html()
-    template = Handlebars.compile(source)
-    html    = template(app.portfolio.websites[$(this).data('page')])
-    $('#info').html(html)
-    setTimeout ->
-      $('#infolink').click()
-    , 100
-
-  if doIntro
-    intro()
-  else
-    $intro.remove()
-    intiContent()
-  

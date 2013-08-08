@@ -10,7 +10,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -52,14 +53,14 @@
                                     <li>
                                         <a data-page="2" data-animation="15" class="gn-icon gn-icon-console" href="#development">Development</a>
                                     </li>
-                                    <li>
+                                    <!--<li>
                                         <a data-page="3" data-animation="16" class="gn-icon gn-icon-paint-format" href="#printDesign">Design</a>
-                                    </li>
+                                    </li>-->
                                     <li>
-                                        <a data-page="4" data-animation="53"class="gn-icon gn-icon-books" href="#cv">CV</a>
+                                        <a data-page="3" data-animation="53"class="gn-icon gn-icon-books" href="#cv">CV</a>
                                     </li>
                                     <li style="display: none">
-                                        <a id="infolink" data-page="5" data-animation="53" href="info">Info</a>
+                                        <a id="infolink" data-page="4" data-animation="53" href="info">Info</a>
                                     </li>
                                 </ul>
                             </div>
@@ -79,16 +80,32 @@
                         <div class="pt-page pt-page-1">
                             <div id="profile" class="wrapper">
                                 <div id="profile_desc" class="desc">
-                                    <h2>Web development and UI design</h2>
-                                <!--Fixated on HTML5, JavaScript, CSS3, OOCSS/BEM, Sass/SCSS, Grunt.js, RWD, AngularJS, declarative data-binding, MVC/MVVM, front-end architecture. -->
-                                    <p>After having developed my teaching skills by sharing my programming knowledge through lecturing in different universities, I took the step to move into front end developing. Design was more of a passion for me than the architecture of a database.</p>
-                                    <img src="images/ratecity1.jpg" alt="Home page Ratecity.com.au" />
-                                    <p>At this time UX design was a nascent industry, and I continued independent research across the web, studying the different forms of web interaction.</p>
-                                    <p>I believe my programming background, most notably javascript has driven and enabled my imagination for the best possible permutations in user experience.</p>
-                                    <p>With this experience, I can also follow the project through from concept, prototype and full realization, with a clear understanding from beginning to end.</p>
-                                    <p>My philosophy is always to start from the user's point of view, and building on a deep understanding of their experience.</p> 
-                                    <img src="images/ratecity3.jpg" alt="Calulator Ratecity.com.au" />
+                                    <div class="paper">
+                                        <h2>Profile</h2>
+                                        <p>
+                                            My name is Pierre and I'm a talented and enthusiastic Senior Frontend/UI Developer.
+                                        </p>
+                                        <div id="deviceContainer">
+                                            <div class="devices">
+                                              <div class="ipad">
+                                                <div class='screen'></div>
+                                              </div>
+                                              <div class="notebook">
+                                                <div class='screen'></div>
+                                                <div class='keyboard'></div>
+                                              </div>
+                                              <div class="iphone">
+                                                <div class='screen'></div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Craft is everything to me. I notice, love, and care for user experience details that are essential for an application to feel just right - most of which aren't communicated in flats: animation timing, interaction states, responsive layout, typographical flourishes, page load speed, and suitable UX patterns. Technology has my head, but design and movement have my heart.
+                                        </p>                     
+                                    </div>         
                                 </div>
+
+
                             </div>
 
                         </div>
@@ -117,109 +134,39 @@
                                 <ul>
                                     <li>
                                         <span>Languages</span> : 
-                                        <em>Javascript</em>, Ruby, C#, Java, PHP, Action Script, XHTML, <em>CSS</em>, FBML, XAML, MXML
+                                        <em>Javascript</em>, PHP (<em>Laravel</em>, Fat free, Symfony), Ruby (<em>Rails</em>), C#, XHTML, <em>CSS</em>
                                     </li>
                                     <li>
                                         <span>Frameworks & SDK</span>: 
                                         <em>JQuery</em>, Rails, webGL, Raphael, Prototype, JSON, Processing
                                     </li>
                                     <li>
-                                        <span>Operating system</span>: 
-                                        Mac OS X, Windows, Linux
+                                        <span>HTML5 animation</span>: 
+                                         <em>canvas</em>, SVG, Easel.js, games
+                                    </li>
+                                    <li>
+                                        <span>Native mobile applications</span>: 
+                                         <em>Cordova</em>, Phonegap
                                     </li>
                                     <li>
                                         <span>Softwares</span>: 
-                                        <em>Adobe suite</em> (complete), Eclipse, Visual Studio, Flex Builder, Microsoft Expression.
+                                        <em>Sublime text</em>, <em>Adobe suite</em> (complete), Visual Studio
                                     </li>
                                     <li>
                                         <span>Collaborative management tool</span>: 
-                                        <em>Git</em>,<em> Pivotal tracker</em>, Mantis, Jira
+                                        <em>Git</em>, <em>Basecamp</em>, Sifter, Pivotal tracker, Mantis, Jira
                                     </li>
                                     <li>
                                         <span>Methodologies</span>: 
-                                        <em>Agile</em>,<em> User Centered Design</em>,<em> User scenario</em>,<em>Usability testing</em>
+                                        <em>DRY</em>, <em>Agile</em>,<em> User Centered Design</em>,<em> User scenario</em>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="pt-page pt-page-4">
-                            <div id="interfaceDesign" class="wrapper">
+                                <div id="skillsWrapper">
 
-                                <h2>Interaction design</h2>
-                                <ul class="linklist">
-                                    <li><a href="#studyCase" class="active">Study case</a></li>
-                                    <li><a href="#prototype">Prototype</a></li>
-                                </ul>
-                                <div id="studyCase"  class="subwrapper">
-                                    <div id="interaction_design_desc" class="desc">
-                                        <span class="box-title">The Decanter</span>
-                                        <p>
-                                            In this comparison site, the attention was centered around helping the user  choose a product between a large range of products. In order to help to refine  the choice, I created a watch list  allowing the user to select the product he might be interested in.
-                                            This way he can go through the huge list of products and make a comparison between selected products more easily.
-                                            <br>
-                                            <small><a href="http://www.ratecity.com.au">Ratecity.com.au</a></small>
-                                        </p>
-                                        
-                                    </div>
-                                    <img src="images/interaction2.png" alt="Study case: the decanter" />
-                                    <ul class="smallImglist">
-                                        <li>
-                                            <span class="box-title">Fast SEARCH</span>
-                                            <p>In order to help the user to find the best product quickly, all the parameters are easily accessible by refining the search via ajax without reloading the full page
-                                            </p>
-                                            <p>Slider are here to make the search even quicker.</p>
-                                        </li>
-                                        <li>
-                                            <span class="box-title">Inform the user</span>
-                                            <p>According to the search, some products selected might be not available. A color code is use to alert him.</p>
-                                            <p>This part of the table named the "decanter" is always visible at the top of the page even if the user scroll down.</p>
-                                        </li>
-                                        <li>
-                                            <span class="box-title">Be social</span>
-                                            <p>One of the best way to make a decision is to share the information to discuss it. Mail, print, bookmark. And soon +1...</p>
-                                            <p>Hints appear on hover state in order to define symbols that might not be recognized</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div id="prototype" class="subwrapper">
-                                    <p class="espace">Interface experiences are explored and defined through the use of whiteboard sketches, wireframes and prototypes.</p>
-                                    <img src="images/interaction3.png" alt="Wireframe" />
-                                </div>
-
-
-
-
-                                <h2>Interface design</h2>
-                                <ul class="linklist">
-                                    <li><a href="#officeWork" class="active">Office Work</a></li>
-                                    <li><a href="#freelance">Freelance Work</a></li>
-                                </ul>
-                                <div id="officeWork" class="subwrapper">
-                                    <div id="interface_design_desc" class="desc">
-                                    <p>Websites for Ratecity, Laurentienne Bank, Boeing and Royal Bank Canada. </p>
-                                    <img src="images/fe1bis.jpg" alt="Boeing, Royal Bank Canada and Laurentienne Bank" /></div> 
-                                </div>
-                                <div id="freelance" class="subwrapper">
-                                    <p>Design for the web site Solar panel (in construction)</p>
-                                    <img src="images/fe2.png" alt="Solar panel" />
-                                    <img src="images/fe3.png" alt="Freelance works" class="espace"/>
-                                    <ul class="smallImglist">
-                                        <li class="espace">
-                                            <span class="box-title">Facebook application</span>
-                                            <small>Competition integrated in Facebook</small>
-                                        </li>
-                                        <li class="espace">
-                                            <span class="box-title">Sales forces integration</span>
-                                            <small>Targeting affiliates</small>
-                                        </li>
-                                        <li class="espace">
-                                            <span class="box-title">Wordpress Template</span>
-                                            <small>Product catalogue template.</small>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="pt-page pt-page-5">
                             <div id="cv" class="wrapper">
                                 <h2>Curriculum Vitae</h2>
@@ -276,7 +223,6 @@
         {{/each}}
     </script>
 
-
     <script id="portfolio-template" type="text/x-handlebars-template">
         {{#each websites}}
             <div class="item {{#each type}} {{this}} {{/each}}">
@@ -296,17 +242,31 @@
             </div>
         {{/each}}
     </script>
+    
+    <script id="xp-template" type="text/x-handlebars-template">
+        {{#each category}}
+            <h3>{{name}}</h3>
+            <div class="chartWrapper" >
+                {{#each technology}} 
+                    <div class="graphs stats-container centered biggie">
+                        <div class="text-label">{{name}}</div>
+                        <div class="chart" data-percent="{{value}}">{{value}}%</div>
+                    </div>
+                {{/each}}
+            </div>     
+        {{/each}}
+    </script>
 
 
     <script id="info-template" type="text/x-handlebars-template">
         <h2>{{name}}</h2>
-        <h3>{{client}}</h3>
-        <div class="infowrapper">
-            {{#with link}}
-                <p>
-                    <a href="{{link}}" target="_blank">Visit the website</a>
-                </p>
+        <h3>
+            {{client}}
+            {{#with weblink}}
+                    <a href="{{this}}" target="_blank">Visit the website</a>
             {{/with}}
+        </h3>
+        <div class="infowrapper">
             {{#with video}}
                 <h4>Video:</h4>
                 <iframe width="560" height="315" src="//www.youtube.com/embed/{{this}}" frameborder="0" allowfullscreen></iframe>
@@ -350,9 +310,12 @@
 
     <!-- endbuild -->
     <!-- build:js(.tmp) scripts/coffee.js -->
+    <script src="scripts/vendor/piechart.js"></script>
     <script src="scripts/intro.js"></script>
     <script src="scripts/portfolio.js"></script>
     <script src="scripts/cv.js"></script>
+    <script src="scripts/experience.js"></script>
+    <script src="scripts/main.js"></script>
     <!-- endbuild -->
 </body>
 </html>

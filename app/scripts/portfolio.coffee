@@ -3,7 +3,7 @@ window.app = {}
 window.app.portfolio = {
     websites:[
         name: 'Share the softness'
-        link:'sharethesoftness.kleenex.com.au'
+        weblink:'http://sharethesoftness.kleenex.com.au'
         video: '2VeQGwE9psg'
         mobile: true
         type: ['website', 'mobile', 'webapp', 'tablet']
@@ -11,7 +11,7 @@ window.app.portfolio = {
         thumb: [74,73,72,71,70]
       ,
         name: 'Share the Cleaning'
-        link:'https://sharethecleaning.viva-cleaning.com.au'
+        weblink:'https://sharethecleaning.viva-cleaning.com.au'
         video: 'XV9j4N-68mI'
         mobile: true
         type: ['website', 'mobile', 'webapp', 'tablet']
@@ -25,7 +25,7 @@ window.app.portfolio = {
         thumb: [9,8,7,6,5,4]
       ,
         name: 'The Avengers'
-        link:'http://www.theavengers.com.au/'
+        weblink:'http://www.theavengers.com.au/'
         vimeo: '48000592'
         mobile: true
         type: ['website', 'mobile', 'tablet']
@@ -38,7 +38,7 @@ window.app.portfolio = {
         thumb: [65,66,67,68,69]
       ,
         name: 'Buff Enough'
-        link: 'http://www.buffenough.com.au'
+        weblink: 'http://www.buffenough.com.au'
         video: 'peH0bVOUfiM'
         mobile: true
         type: ['website', 'mobile', 'webapp', 'tablet']
@@ -46,7 +46,7 @@ window.app.portfolio = {
         thumb: [47,48,46,45,44,43]
       ,
         name: 'Sweet Clinic'
-        link:'http://boxofsoap.com/work/unilever/rexona/clinical2012/site/rexona-clinical-protection-competition'
+        weblink:'http://boxofsoap.com/work/unilever/rexona/clinical2012/site/rexona-clinical-protection-competition'
         mobile: true
         type: ['website', 'mobile', 'tablet']
         client: 'Rexona'
@@ -71,7 +71,7 @@ window.app.portfolio = {
         thumb: [27,28,29,30]
       ,
         name: 'Impulse your love'
-        link: 'http://prod.myimpulse.com.au/main.php'
+        weblink: 'http://prod.myimpulse.com.au/main.php'
         video: '2Of0tr1KrYM'
         mobile: true
         type: ['mobile', 'tablet']
@@ -85,7 +85,7 @@ window.app.portfolio = {
         thumb: [13,12]
       ,
         name: 'Jacob\'s Creek'
-        link:'http://jacobscreek.com.au/'
+        weblink:'http://jacobscreek.com.au/'
         vimeo: '50578365'
         mobile: true
         type: ['website', 'mobile', 'tablet']
@@ -105,7 +105,7 @@ window.app.portfolio = {
         thumb: [2,3]
       ,
         name: 'Thumbzillia'
-        link:'http://www.soapcreative.com/thumbzilla/'
+        weblink:'http://www.soapcreative.com/thumbzilla/'
         video: 'mfMhhLDhgXo'
         type: ['website']
         client: 'Soap Creative'
