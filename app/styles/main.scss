@@ -22,7 +22,7 @@ body{
   color: white;
   font-family: 'Lato', Arial, sans-serif;
   font-weight: 100;
-  background: radial-gradient(#fff, #bbb);
+  background: #7bb4d1;
 }
 
 body, ol, ul, li {
@@ -44,6 +44,7 @@ h2{
 }
 h3{
     text-transform: capitalize;
+    font-size: 1.5em;
     a{
       float: right;
       color: #fff;
@@ -71,12 +72,6 @@ em{
   font-style: normal;
   font-weight: 300;
 }
-
-time{
-  color:#9C9C9C;
-  font-size:small;
-}
-
 #main{
     overflow:hidden;
 }
@@ -91,7 +86,8 @@ img{
     top: 137px;
     right: 59px;
     line-height: 12px;
-
+    font-size: 1.2em;
+    font-weight: 600;
     li {
       height: 15px;
       float: left;
@@ -129,9 +125,33 @@ img{
  padding: 60px 80px;
 }
 
-@media screen and (max-width: 530px) { 
-    .wrapper{
-        padding: 60px 15px;
+#profile_desc .gn-icon-mail {
+color: #fff;
+text-decoration: none;
+position: absolute;
+top: 134px;
+font-weight: 600;
+right: 79px;
+&:before{
+  width: 25px;
+  line-height: 9px;
+}
+}
+
+@media screen and (max-width: 800px) { 
+    .linklist{
+      position: relative;
+      top:0;right: auto;
+      margin-bottom: 20px;
+      @include clearfix;
+      li:first-child{
+        padding-left: 0;
+      }
+    }
+    #profile_desc .gn-icon-mail{
+      position: relative;
+      top:0;
+      right:auto;
     }
 }
 
@@ -150,10 +170,42 @@ max-width: 726px;
 margin: 0 auto;
 }
 
+@media screen and (max-width: 530px) { 
+  .wrapper{
+      padding: 60px 15px;
+  }
+  #development li {
+    margin-bottom:10px;
+    span{
+      display: block;
+      color:#C2CBCE;
+    }
+  }
+  .linklist li {
+  float: none;
+  border-right: none;
+  padding: 5px 0;
+  }
+  #backto{
+    position: absolute;
+    right:20px;
+    top:190px;
+  }
+  #deviceContainer {
+    position: absolute;
+    top:50px;
+  }
+  .fotorama img{
+    min-height: 100px !important;
+  }
+
+}
+
 
 .devices{
-  height: 246px;
+  min-height: 246px;
   margin: 50px auto 20px auto;
+  @include clearfix;
   &.anim{
     .notebook{
       animation-name: bounceInDown;
@@ -331,4 +383,17 @@ margin: 0 auto;
   z-index: -1;
   border-radius: 1px;
   z-index: 1
+}
+@media screen and (max-width: 700px) { 
+    .notebook,.ipad,.iphone{
+      margin:0 !important;
+    }
+}
+@media screen and (max-width: 430px) { 
+    .notebook,.ipad,.iphone{
+      margin:20px 0 !important;
+    }
+    #profile{
+      min-height: 1500px;
+    }
 }

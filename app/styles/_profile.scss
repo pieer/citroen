@@ -185,13 +185,7 @@
        -ms-transition: all 0.2s linear;
        transition: all 0.2s linear;
     }
-    &:hover img {
-       -webkit-transform: scale(1.1,1.1);
-       -moz-transform: scale(1.1,1.1);
-       -o-transform: scale(1.1,1.1);
-       -ms-transform: scale(1.1,1.1);
-       transform: scale(1.1,1.1);
-    }
+    
     .info {
        -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
        filter: alpha(opacity=0);
@@ -242,6 +236,8 @@
   border: 2px solid #fff;
   min-height: 286px;
 }
+
+
 .displayMobile{
   img{
     display: none !important;

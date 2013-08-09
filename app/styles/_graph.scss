@@ -15,7 +15,9 @@
 .chart.easyPieChart {
 display: inline-block;
 position: relative;
-background: radial-gradient(#ffffff, #ccc);
+background: #fff;
+//background: radial-gradient(#ffffff, #ccc);
+border: 5px solid #fff;
 border-radius: 50%;
 padding: 1px;
 color: rgb(209, 72, 54);

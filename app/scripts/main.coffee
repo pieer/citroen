@@ -70,7 +70,7 @@ $(document).ready ->
   setTimeout ->
     $('.chart').easyPieChart(
       animate: 2000
-      barColor: '#D14836'  #ef1e25 The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
+      barColor: '#F2F26F'  #ef1e25 The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
       #trackColor: '#D14836'  #f2f2f2 The color of the track for the bar, false to disable rendering.
       scaleColor: false
       lineCap:    'round'
@@ -87,15 +87,24 @@ $(document).ready ->
   #   , 5000
 
   #init info page
-  $('.readmore').on 'click', (e)->
+  Eventtype = 'click'
+  if mobilecheck()
+    Eventtype = 'click'
+  $('.readmore').on Eventtype, (e)->
     e.preventDefault()
     source   = $("#info-template").html()
     template = Handlebars.compile(source)
     html    = template(app.portfolio.websites[$(this).data('page')])
     $('#info').html(html)
+    $('#infolink').trigger(Eventtype)
     setTimeout ->
-      $('#infolink').click()
-    , 100
+      $center_col.css
+        height: $('.pt-page-current .wrapper').height()
+    , 500
+    setTimeout ->
+      $center_col.css
+        height: $('.pt-page-current .wrapper').height()
+    , 3000
 
   if doIntro
     app.intro()

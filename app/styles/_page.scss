@@ -5,11 +5,14 @@ background-color: #34495e;
 }
 #profile {
     background-color: #7bb4d1;
-a{color:#a3c9dc;}
-
 }
 #development{
-   background-color:  bdd84d;
+   background-color:  #81A8B8;
+   font-size:1.1em;
+   font-weight: 300;
+   em{
+    color:#F2F26F;
+   }
 }
 #interactionDesign {
 background-color: #fd6a62;
@@ -21,10 +24,16 @@ background-color: #0ac2d2;
 background-color: #fdc162;
 }
 #cv {
-background-color: #60d7a9;
+background-color: #68B3AF;
 }
+$timelineborderactive: #D3E2B6;
+$timelineborder:#87BDB1;
+#cv {
+background-color: #95CFB7;
+}
+$timelineborderactive: #FF823A;
+$timelineborder:#F2F26F;
 
-#development,
 #portfolio {
 background-color: #34495e;
 }

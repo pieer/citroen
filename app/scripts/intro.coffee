@@ -128,8 +128,12 @@ $(document).ready ->
       marginLeft:'-400px'
       opacity:0
 
+    ia.call ->
+      $('#deviceContainer').css
+        position: 'relative'
+        top: 0
 
-    ia.staggerFrom($('.paper h2, .paper p'), 1,
+    ia.staggerFrom($('.paper h2, .paper p, .gn-icon-mail'), 1,
       marginLeft:"-2000"
       alpha:0
       ease: "Quint.easeOut"
