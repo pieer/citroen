@@ -89,16 +89,13 @@ $(document).ready ->
   #   , 5000
 
   #init info page
-  Eventtype = 'click'
-  if mobilecheck()
-    Eventtype = 'click'
-  $('.readmore').on Eventtype, (e)->
+  $('.readmore').on 'click', (e)->
     e.preventDefault()
     source   = $("#info-template").html()
     template = Handlebars.compile(source)
     html    = template(app.portfolio.websites[$(this).data('page')])
     $('#info').html(html)
-    $('#infolink').trigger(Eventtype)
+    $('#infolink').trigger('click')
     setTimeout ->
       $center_col.css
         height: $('.pt-page-current .wrapper').height()

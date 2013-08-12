@@ -184,15 +184,6 @@ list-style-position: inside;
   color: $timelineborder;
 }
 
-.content-inner p {
-  font-size: 18px;
-  max-height: 0px;
-  overflow: hidden;
-  color: transparent;
-  color: rgba(0,0,0,0);
-  text-align: left;
-}
-
 .content-inner:before {
   font-family: 'fontawesome-selected';
   content: '\25c2';
@@ -253,7 +244,6 @@ list-style-position: inside;
   background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAOfUjX+882+wYgujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQBbNyaHFmzEqgAAAABJRU5ErkJggg==);
 }
 
-.content-inner p,
 .thumb span,
 .event label {
   -webkit-backface-visibility: hidden;

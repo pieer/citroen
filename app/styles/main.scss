@@ -59,7 +59,6 @@ ul{
 p {
     line-height: 1.3em;
     font-size: 1.1em;
-    max-width: 680px;
 }
 
 .espace{
@@ -430,4 +429,14 @@ margin: 0 auto;
     #profile{
       min-height: 1500px;
     }
+    .info{
+      display: none !important;
+    }
+    .gn-menu-wrapper{
+      z-index: 3;
+    }
+}
+.gn-menu-main > li >a {
+
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

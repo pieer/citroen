@@ -121,14 +121,12 @@ window.app.timeline = {
         company: 'EPSI'
         place:   'Bordeaux'
         image:   'epsi'
-        description: 'Computer Science'
       ,
         period:  '2001'
         title:   'IB Science (equiv HSC)'
         company: 'Saint Joseph'
         place:   'Perigeux'
         image:   'santjo'
-        description: 'Computer Science'
       ,
     ]
   ]

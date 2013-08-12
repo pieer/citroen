@@ -30,7 +30,8 @@ function mobilecheck() {
 
 			this.menu = this.el.querySelector( 'nav.gn-menu-wrapper' );
 			this.isMenuOpen = false;
-			this.eventtype = mobilecheck() ? 'touchstart' : 'click';
+			//this.eventtype = mobilecheck() ? 'touchstart' : 'click';
+			this.eventtype = 'click';
 			this._initEvents();
 
 			var self = this;
@@ -72,8 +73,7 @@ function mobilecheck() {
 		_closeIconMenu : function() {
 			classie.remove( this.menu, 'gn-open-part' );
 		},
-		_openMenu : function() {
-			//console.log('menuopen', this.isMenuOpen);
+		_openMenu : function() {		
 			if( this.isMenuOpen ) return;
 			classie.add( this.trigger, 'gn-selected' );
 			this.isMenuOpen = true;
