@@ -58,6 +58,7 @@ var PageTransitions = (function() {
       outClass = '', inClass = '';
     minHeight = $nextPage.find('.wrapper').outerHeight();
     winHeight = $(window).outerHeight();
+    
     if(minHeight<= winHeight){
       $nextPage.find('.wrapper').css({'height': winHeight});
     }

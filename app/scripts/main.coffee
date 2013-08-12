@@ -78,6 +78,8 @@ $(document).ready ->
       size: 200
       animate: 500
     )
+    $center_col.css
+      height: $('.pt-page-current .wrapper').height()
     #$('.chart').data('easyPieChart').update(40)
   , 5000
   # $('[href="#development"]').on 'click', ->
@@ -105,6 +107,24 @@ $(document).ready ->
       $center_col.css
         height: $('.pt-page-current .wrapper').height()
     , 3000
+
+
+  $ipad = $('.ipad .device_c')
+  ipadpos = 0
+  $notebook  = $('.notebook  .device_c')
+  notebookpos = 0
+  $iphone = $('.iphone .device_c')
+  iphonepos = 0
+  setInterval ->
+    ipadpos -= 126
+    notebookpos -= 160
+    iphonepos -= 83
+    if ipadpos < -378
+      iphonepos = notebookpos = ipadpos = 0
+    $ipad.css({backgroundPosition:'0 '+ipadpos+'px'})
+    $notebook.css({backgroundPosition:'-100px '+notebookpos+'px'})
+    $iphone.css({backgroundPosition:'-354px '+iphonepos+'px'})
+  ,7000
 
   if doIntro
     app.intro()

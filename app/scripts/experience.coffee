@@ -31,16 +31,16 @@ window.app.experience = {
     name: 'JavaScript libraries'
     technology: [
         name:   'Jquery'
-        value:  '90'
+        value:  '100'
       ,
         name:   'Backbone'
-        value:  '85'
+        value:  '95'
       ,
         name:   'Grunt'
-        value:  '80'
+        value:  '95'
       ,
         name:   'Greensock'
-        value:  '80'
+        value:  '90'
       ,
         name: 'Require'
         value:  '75'
@@ -55,16 +55,16 @@ window.app.experience = {
     name: 'Preprocessor / transcompiler'
     technology: [
         name:   'Sass/SCSS'
-        value:  '90'
+        value:  '95'
       ,
         name:   'Coffeescript'
-        value:  '85'
+        value:  '95'
       ,
         name:   'Jade'
-        value:  '80'
+        value:  '100'
       ,
         name:   'HAML'
-        value:  '80'
+        value:  '100'
     ]
   ]
 }

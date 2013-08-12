@@ -296,6 +296,18 @@ module.exports = function (grunt) {
                 'svgmin',
                 'htmlmin'
             ]
+        },
+        "sftp-deploy":{
+            build: {
+                auth:{
+                  host: "a88.5b2.myftpupload.com",
+                  port: 22,
+                  authKey: "key1"
+                },
+                src: "<%= yeoman.dist %>",
+                dest: "",
+                exclusions: ["dist/**/.DS_Store", "dist/**/Thumbs.db", "dist/tmp"]
+            }
         }
     });
 
@@ -329,7 +341,8 @@ module.exports = function (grunt) {
         'uglify',
         'copy:dist',
         'rev',
-        'usemin'
+        'usemin'/*,
+        "sftp-deploy"*/
     ]);
 
     grunt.registerTask('default', [

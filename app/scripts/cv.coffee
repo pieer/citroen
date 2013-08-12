@@ -9,15 +9,16 @@ window.app.timeline = {
         image:   'soap'
         description: 'Frontend, backend and lead developer for different Soap Creative websites. My responsibilities include:'
         tasks: [
+            'Creation of responsives websites',
+            'Creation of web and mobile applications',
+            'Creation of hybrid applications for IOS and Android',
+            'Developed CMS powered websites',
+            'Creation of facebook competitons, EDM etc...',
+            'Creation of a facebook application generator',
             'Define the best technology for the developments',
             'Define the architecture',
             'Time estimation',
-            'Creation of responsive website',
-            'Creation of web and mobile application',
-            'Creation of hybrid app for IOS and Android',
-            'Creation of facebook competitons, EDM etc...',
-            'Task and process automation',
-            'Presentations to the team on new technology'
+            'Task and process automation'
         ]
       ,
         period:  '2010-2011'

@@ -224,6 +224,13 @@ margin: 0 auto;
   float: left;
   animation-duration:1s;
   margin-left:34px;
+  position: relative;
+  .device_c{
+  top: 14px;
+  left: 48px;
+  width: 254px;
+  background-position: -100px 0;
+  }
 }
 .notebook .screen:before {
   content: "";
@@ -289,6 +296,14 @@ margin: 0 auto;
   margin: 20px 60px 0px 0px;
   float: left;
   animation-duration:1s;
+  position: relative;
+  .device_c{
+  top: 12px;
+  left: 10px;
+  width: 100px;
+  background-position: 0 0;
+  height: 126px;
+  }
 }
 .ipad:before {
   content: "";
@@ -340,6 +355,14 @@ margin: 0 auto;
   width: 62px;
   float: left;
   animation-duration:1s;
+  position: relative;
+  .device_c{
+    top: 13px;
+    left: 4px;
+    width: 54px;
+    background-position: -354px 0;
+    height: 84px;
+  }
 }
 .iphone:before {
   content: "";
@@ -384,6 +407,17 @@ margin: 0 auto;
   border-radius: 1px;
   z-index: 1
 }
+.device_c{
+  background: url('../images/home.jpg') no-repeat 0 0;
+  position: absolute;
+  z-index: 5;
+  height:160px;
+   box-shadow:inset 0 0 2px #ccc;
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+}
+
 @media screen and (max-width: 700px) { 
     .notebook,.ipad,.iphone{
       margin:0 !important;
