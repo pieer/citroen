@@ -5,8 +5,13 @@ background-color: #34495e;
 }
 #profile {
     background-color: #7bb4d1;
-    max-width: 1300px;
-    margin: 0 auto;
+background: url(../images/bgd.png) no-repeat right bottom #86b4ce;
+padding-bottom:0;
+}
+#profile_desc{
+  max-width: 800px;
+  min-height: 900px;
+  padding-bottom:20px;
 }
 #development{
    background-color:  #81A8B8;

@@ -21,8 +21,11 @@ $(document).ready ->
     $main.css
       height: 'auto'
 
-    $('.mainWrapper').css
+    $('.mainWrapper, .wrapper').css
       minHeight: $mainY
+
+    $center_col.css
+      height: $('.pt-page-current .wrapper').height()
 
     $('#cd-dropdown').dropdown()
 
@@ -41,6 +44,8 @@ $(document).ready ->
     
     $(window).resize ->
       $pcontainer.isotope 'reLayout'
+      $center_col.css
+        height: $('.pt-page-current .wrapper').height()
 
   Handlebars.registerHelper "displayMobile", (thumb)->
     new Handlebars.SafeString '<img class="mobileImg" src="images/large/'+thumb[thumb.length-1]+'.jpg"/>'
@@ -78,10 +83,8 @@ $(document).ready ->
       size: 200
       animate: 500
     )
-    $center_col.css
-      height: $('.pt-page-current .wrapper').height()
-    #$('.chart').data('easyPieChart').update(40)
   , 5000
+
   # $('[href="#development"]').on 'click', ->
   #   setTimeout ->
   #     $('.chart').each (el) ->

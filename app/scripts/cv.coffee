@@ -9,16 +9,16 @@ window.app.timeline = {
         image:   'soap'
         description: 'Frontend, backend and lead developer for different Soap Creative websites. My responsibilities include:'
         tasks: [
-            'Creation of responsives websites',
-            'Creation of web and mobile applications',
-            'Creation of hybrid applications for IOS and Android',
-            'Developed CMS powered websites',
-            'Creation of facebook competitons, EDM etc...',
-            'Creation of a facebook application generator',
-            'Define the best technology for the developments',
-            'Define the architecture',
-            'Time estimation',
-            'Task and process automation'
+            'Charged with creation of responsives websites, web and mobile applications',
+            'Lead developer on hybrid apps for iOS and Android',
+            'Integral member of team working on development of CMS powered websites for blue chips clients eg. Jacob\'s Creek',
+            'Fast, meticulous creation of Facebook app and eDMs',
+            'Identified the business need for a scalable Facebook application generator, developed the tool which would enable seamless development of an App by a producer',
+            'Led project scope to understand and implement the relevant technology',
+            'Managed a team of junior developers to implement the architecture as per my guidance',
+            'Worked xfunctionally to ensure accurate workflow management on multiple projects',
+            'Established a deployment process to automate basic tasks',
+            'Shared best practice on inovative technologies'
         ]
       ,
         period:  '2010-2011'
