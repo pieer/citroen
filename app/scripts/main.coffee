@@ -1,5 +1,5 @@
 $(document).ready ->
-  doIntro = true
+  doIntro = false
 
   $intro = $('#intro')
   $main = $('#main')
@@ -29,6 +29,7 @@ $(document).ready ->
 
     $('#cd-dropdown').dropdown()
 
+    # dropdown and isotope
     $pcontainer.isotope
       itemSelector : '.item'
       filter: '.website'
@@ -40,16 +41,19 @@ $(document).ready ->
         $pcontainer.addClass('displayMobile')
       else
         $pcontainer.removeClass('displayMobile')
+      false
 
     
     $(window).resize ->
       $pcontainer.isotope 'reLayout'
       $center_col.css
         height: $('.pt-page-current .wrapper').height()
+      false
+    false
 
+  # Helper function
   Handlebars.registerHelper "displayMobile", (thumb)->
     new Handlebars.SafeString '<img class="mobileImg" src="images/large/'+thumb[thumb.length-1]+'.jpg"/>'
-
 
   # Add portfolio content
   source   = $("#portfolio-template").html()
@@ -72,11 +76,11 @@ $(document).ready ->
   html    = template(app.experience)
   $('#skillsWrapper').append(html)
   
+  # init easyPieChart
   setTimeout ->
     $('.chart').easyPieChart(
       animate: 2000
-      barColor: '#F2F26F'  #ef1e25 The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
-      #trackColor: '#D14836'  #f2f2f2 The color of the track for the bar, false to disable rendering.
+      barColor: '#F2F26F'
       scaleColor: false
       lineCap:    'round'
       lineWidth:  10
@@ -85,11 +89,6 @@ $(document).ready ->
     )
   , 5000
 
-  # $('[href="#development"]').on 'click', ->
-  #   setTimeout ->
-  #     $('.chart').each (el) ->
-  #     #$('.chart').data('easyPieChart').update(40)
-  #   , 5000
 
   #init info page
   $('.readmore').on 'click', (e)->
@@ -107,24 +106,6 @@ $(document).ready ->
       $center_col.css
         height: $('.pt-page-current .wrapper').height()
     , 3000
-
-
-  $ipad = $('.ipad .device_c')
-  ipadpos = 0
-  $notebook  = $('.notebook  .device_c')
-  notebookpos = 0
-  $iphone = $('.iphone .device_c')
-  iphonepos = 0
-  setInterval ->
-    ipadpos -= 126
-    notebookpos -= 160
-    iphonepos -= 83
-    if ipadpos < -378
-      iphonepos = notebookpos = ipadpos = 0
-    $ipad.css({backgroundPosition:'0 '+ipadpos+'px'})
-    $notebook.css({backgroundPosition:'-100px '+notebookpos+'px'})
-    $iphone.css({backgroundPosition:'-354px '+iphonepos+'px'})
-  ,7000
 
   if doIntro
     app.intro()

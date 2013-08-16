@@ -1,54 +1,55 @@
 $(document).ready ->
 
-  $intro = $('#intro')
-  $main = $('#main')
+  app.initIntro = ->
+    $intro = $('#intro')
+    $main = $('#main')
 
-  $center_col = $('#center_col')
-  $photo = $('#photo')
-  
-  $panel1 = $('#panel1')
-  $panel2 = $('#panel2')
-  $firstname = $('#firstname')
-  $lastname = $('#lastname')
-  $line = $('.line')
+    $center_col = $('#center_col')
+    $photo = $('#photo')
+    
+    $panel1 = $('#panel1')
+    $panel2 = $('#panel2')
+    $firstname = $('#firstname')
+    $lastname = $('#lastname')
+    $line = $('.line')
 
-  $header = $('#gn-menu')
-  $header.css
-    height: 0
+    $header = $('#gn-menu')
+    $header.css
+      height: 0
 
 
-  $mainX = $(window).width()
-  $mainY = $(window).height()
-  $main.css
-    height: $mainY
+    $mainX = $(window).width()
+    $mainY = $(window).height()
+    $main.css
+      height: $mainY
 
-  $intro.css
-    width: $mainX
-    height: $mainY
+    $intro.css
+      width: $mainX
+      height: $mainY
 
-  $centerx = $mainX/2
-  $centery = $mainY/2
+    $centerx = $mainX/2
+    $centery = $mainY/2
 
-  $panel1.css
-    height: $centery
-    width: '200%'
-    marginLeft: '-50%'
-    paddingLeft: '50%'
-    marginTop: -$centery
-    paddingTop: $centery
+    $panel1.css
+      height: $centery
+      width: '200%'
+      marginLeft: '-50%'
+      paddingLeft: '50%'
+      marginTop: -$centery
+      paddingTop: $centery
 
-  $panel2.css
-    height: $mainY
-    width: '200%'
-    marginLeft: '-50%'
-    paddingLeft: '50%'
-    top: $centery
+    $panel2.css
+      height: $mainY
+      width: '200%'
+      marginLeft: '-50%'
+      paddingLeft: '50%'
+      top: $centery
 
-  $firstname.css
-    marginTop: $centery + 20
-    marginLeft: $centerx - 120
-  $lastname.css
-    marginLeft: $centerx - 150
+    $firstname.css
+      marginTop: $centery + 20
+      marginLeft: $centerx - 120
+    $lastname.css
+      marginLeft: $centerx - 150
 
   app.intro = ->
 
@@ -102,6 +103,23 @@ $(document).ready ->
       app.intiContent()
       $center_col.css
         height: $('#profile').height()
+
+      $ipad = $('.ipad .device_c')
+      ipadpos = 0
+      $notebook  = $('.notebook  .device_c')
+      notebookpos = 0
+      $iphone = $('.iphone .device_c')
+      iphonepos = 0
+      setInterval ->
+        ipadpos -= 126
+        notebookpos -= 160
+        iphonepos -= 83
+        if ipadpos < -378
+          iphonepos = notebookpos = ipadpos = 0
+        $ipad.css({backgroundPosition:'0 '+ipadpos+'px'})
+        $notebook.css({backgroundPosition:'-100px '+notebookpos+'px'})
+        $iphone.css({backgroundPosition:'-354px '+iphonepos+'px'})
+      ,7000
 
     ia.to $header, 0.5,
       height: 60
